@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southwest Overland Trip — April 20 – May 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ── VARIABLES ─────────────────────────────────────────────────────────── */
+:root {
+  --rust:      #C0392B;
+  --rust-dark: #922B21;
+  --rust-pale: #F5E6E4;
+  --ember:     #E67E22;
+  --ember-pale:#FEF3E2;
+  --gold:      #D4A017;
+  --gold-pale: #FBF3D9;
+  --sand:      #E8D5B7;
+  --sand-dark: #C9A96E;
+  --sage:      #5A7A56;
+  --sage-pale: #EBF0EA;
+  --stone:     #5D5C61;
+  --stone-pale:#F0EDE8;
+  --night:     #1A1A2E;
+  --ink:       #2C2C3A;
+  --pine:      #2D5016;
+  --sky:       #2471A3;
+  --sky-pale:  #EBF5FB;
+  --cream:     #FAF8F3;
+  --white:     #FFFFFF;
+  --teal:      #1A7A6E;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --page-width: 8.5in;
+  --margin: 0.6in;
+}
+
+/* ── RESET & BASE ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 10.5pt; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--stone-pale);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ── PRINT CONTAINER ───────────────────────────────────────────────────── */
+.book {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+}
+
+/* ── COVER PAGE ─────────────────────────────────────────────────────────── */
+.cover {
+  background: var(--night);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+.cover-hero {
+  width: 100%;
+  height: 48vh;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  opacity: 0.75;
+}
+
+.cover-gradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,26,46,0.3) 0%,
+    rgba(26,26,46,0.1) 35%,
+    rgba(26,26,46,0.85) 60%,
+    rgba(26,26,46,1) 100%
+  );
+  pointer-events: none;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--margin);
+  padding-top: 0;
+  margin-top: -12vh;
+}
+
+.cover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--sand-dark);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 52pt;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.0;
+  margin-bottom: 6px;
+}
+
+.cover-title span {
+  color: var(--ember);
+}
+
+.cover-sub {
+  font-family: var(--font-body);
+  font-size: 14pt;
+  font-weight: 300;
+  color: var(--sand);
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.cover-dates {
+  display: inline-block;
+  background: var(--ember);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--rust);
+  margin-bottom: 24px;
+}
+
+/* Cover route table */
+.cover-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin-bottom: 24px;
+}
+.cover-table thead th {
+  background: rgba(255,255,255,0.08);
+  color: var(--sand-dark);
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.cover-table tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.03); }
+.cover-table tbody tr:hover td { background: rgba(230,126,34,0.12); }
+.cover-table td {
+  padding: 7px 12px;
+  color: var(--sand);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  vertical-align: middle;
+}
+.cover-table td:first-child {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--ember);
+  white-space: nowrap;
+  font-weight: 600;
+}
+.cover-table td:nth-child(2) {
+  color: var(--white);
+  font-weight: 600;
+}
+.cover-table td:last-child {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.cover-note {
+  font-size: 8pt;
+  color: rgba(232,213,183,0.6);
+  font-style: italic;
+  text-align: center;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.cover-note strong { color: var(--gold); }
+
+/* ── DAY PAGE STRUCTURE ─────────────────────────────────────────────────── */
+.day-page {
+  page-break-before: always;
+}
+
+/* ── DAY BANNER ─────────────────────────────────────────────────────────── */
+.day-banner {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.day-banner img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.day-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 20%, rgba(26,26,46,0.92) 100%);
+}
+
+.day-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px 24px 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.day-number {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  background: rgba(230,126,34,0.15);
+  border: 1px solid var(--ember);
+  padding: 4px 10px;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.day-title-block { flex: 1; }
+
+.day-date {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--sand-dark);
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.day-title {
+  font-family: var(--font-display);
+  font-size: 22pt;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.day-subtitle {
+  font-size: 9pt;
+  color: var(--sand);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 600px;
+}
+
+/* ── DAY BODY ───────────────────────────────────────────────────────────── */
+.day-body {
+  padding: 20px var(--margin) 28px;
+}
+
+/* ── SECTION HEADER ─────────────────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 10px;
+}
+
+.section-header h3 {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--rust);
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+/* ── FEEL BOX ───────────────────────────────────────────────────────────── */
+.feel-box {
+  background: var(--stone-pale);
+  border-left: 3px solid var(--rust);
+  padding: 12px 16px;
+  font-size: 9.5pt;
+  line-height: 1.7;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.feel-box .energy-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--rust);
+  color: white;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+
+/* ── CAMPGROUND INFO ─────────────────────────────────────────────────────── */
+.camp-info-box {
+  background: var(--sage-pale);
+  border: 1px solid var(--sage);
+  border-left: 3px solid var(--sage);
+  padding: 10px 14px;
+  font-size: 8.5pt;
+  margin: 8px 0 4px;
+  line-height: 1.6;
+}
+.camp-info-box strong { color: var(--pine); }
+
+/* ── ROUTE MAP STRIP ─────────────────────────────────────────────────────── */
+.route-strip {
+  background: var(--night);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  margin: 0 0 4px;
+}
+
+.route-stop {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.stop-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ember);
+  border: 2px solid var(--white);
+  flex-shrink: 0;
+}
+
+.stop-dot.start, .stop-dot.end {
+  background: var(--rust);
+  width: 12px; height: 12px;
+}
+
+.stop-label {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--sand);
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+.stop-label.start, .stop-label.end {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.route-line {
+  flex: 1;
+  min-width: 20px;
+  height: 2px;
+  background: linear-gradient(to right, var(--ember), var(--rust));
+}
+
+/* ── OPTIONS GRID ───────────────────────────────────────────────────────── */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.option-card {
+  border: 1px solid var(--sand);
+  border-top: 3px solid var(--rust);
+  padding: 12px 14px;
+  background: var(--white);
+}
+
+.option-card.recommended {
+  border-top-color: var(--ember);
+  background: var(--ember-pale);
+}
+
+.option-label {
+  font-family: var(--font-mono);
+  font-size: 6.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 4px;
+}
+
+.option-card.recommended .option-label {
+  color: var(--ember);
+}
+
+.option-card h4 {
+  font-family: var(--font-display);
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.option-card p {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: var(--stone);
+  margin-bottom: 6px;
+}
+
+.option-stops {
+  font-size: 8pt;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.option-stops strong { color: var(--rust); }
+
+.option-why {
+  font-size: 7.5pt;
+  font-style: italic;
+  color: var(--stone);
+  padding: 5px 8px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.option-links { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--sky);
+  text-decoration: none;
+  background: var(--sky-pale);
+  border: 1px solid var(--sky);
+  padding: 3px 8px;
+  transition: background 0.15s;
+}
+.map-link:hover { background: var(--sky); color: white; }
+.map-link::before { content: '📍'; font-size: 7pt; }
+
+/* ── HIKE CARDS ─────────────────────────────────────────────────────────── */
+.hikes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.hike-card {
+  border: 1px solid #D8E8D5;
+  background: var(--sage-pale);
+  padding: 10px 12px;
+}
+
+.hike-card h4 {
+  font-family: var(--font-display);
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--pine);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hike-meta {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--stone);
+  margin-bottom: 7px;
+  letter-spacing: 0.04em;
+}
+
+.hike-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.stat-cell {
+  font-size: 7.5pt;
+  line-height: 1.4;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 6.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 1px;
+}
+
+.stat-value { color: var(--ink); }
+
+.hike-unique {
+  font-size: 7.5pt;
+  font-style: italic;
+  color: var(--stone);
+  line-height: 1.45;
+  border-top: 1px solid #D8E8D5;
+  padding-top: 5px;
+  margin-top: 2px;
+}
+
+.stars { color: var(--gold); font-size: 8pt; letter-spacing: -1px; }
+
+/* ── CAMP DECISION TABLE ─────────────────────────────────────────────────── */
+.camp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--sand-dark);
+  margin: 8px 0;
+}
+
+.camp-cell {
+  padding: 10px 12px;
+  border-right: 1px solid var(--sand);
+  font-size: 8pt;
+  line-height: 1.55;
+}
+
+.camp-cell:last-child { border-right: none; }
+
+.camp-cell-header {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding: 6px 12px;
+  display: block;
+}
+
+.camp-cell-header.view { background: var(--rust); color: white; }
+.camp-cell-header.wind { background: var(--stone); color: white; }
+.camp-cell-header.backup { background: var(--sage); color: white; }
+
+.camp-cell { background: var(--stone-pale); vertical-align: top; }
+
+.camp-cell strong { display: block; color: var(--ink); font-size: 8.5pt; margin-bottom: 2px; }
+.camp-cell .coords {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--sky);
+  display: block;
+  margin: 2px 0;
+}
+.camp-cell .price {
+  display: inline-block;
+  background: var(--gold-pale);
+  color: var(--stone);
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  padding: 1px 6px;
+  margin-top: 3px;
+}
+
+/* ── GOLDEN HOUR BOX ─────────────────────────────────────────────────────── */
+.golden-hour {
+  background: linear-gradient(135deg, var(--gold-pale), #FFF8E8);
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  padding: 12px 16px;
+  margin: 10px 0;
+}
+
+.golden-hour-header {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.golden-hour dl {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 3px 12px;
+  font-size: 8.5pt;
+}
+
+.golden-hour dt {
+  font-weight: 600;
+  color: var(--stone);
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  align-self: start;
+}
+
+.golden-hour dd { color: var(--ink); line-height: 1.5; }
+
+/* ── QUICK DECISIONS ─────────────────────────────────────────────────────── */
+.quick-decisions {
+  background: var(--rust-pale);
+  border: 1px solid #E8B4B0;
+  border-left: 4px solid var(--rust);
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+.quick-decisions-header {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust-dark);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.decision-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 8.5pt;
+  border-bottom: 1px solid rgba(192,57,43,0.1);
+  line-height: 1.4;
+}
+.decision-row:last-child { border-bottom: none; }
+
+.decision-icon { font-size: 9pt; flex-shrink: 0; }
+.decision-trigger { font-weight: 700; color: var(--rust-dark); white-space: nowrap; flex-shrink: 0; }
+.decision-arrow { color: var(--stone); flex-shrink: 0; }
+.decision-action { color: var(--ink); }
+
+/* ── FUEL BOX ───────────────────────────────────────────────────────────── */
+.fuel-box {
+  background: var(--ember-pale);
+  border: 1px solid #F0C080;
+  border-left: 4px solid var(--ember);
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+.fuel-header {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ember);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.fuel-box ul {
+  list-style: none;
+  padding: 0;
+}
+.fuel-box li {
+  font-size: 8.5pt;
+  padding: 2px 0;
+  color: var(--ink);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.fuel-box li::before {
+  content: '⛽';
+  position: absolute;
+  left: 0;
+  font-size: 8pt;
+}
+
+/* ── LC ADVANTAGE BOX ───────────────────────────────────────────────────── */
+.lc-box {
+  background: var(--sage-pale);
+  border: 1px solid var(--sage);
+  border-left: 4px solid var(--pine);
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+.lc-header {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pine);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.lc-box .lc-go, .lc-box .lc-avoid {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  padding: 3px 0;
+}
+.lc-go strong { color: var(--pine); }
+.lc-avoid strong { color: var(--rust); }
+
+/* ── TWO-COLUMN LAYOUT ──────────────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 8px 0;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+/* ── HOTEL TABLE ────────────────────────────────────────────────────────── */
+.hotel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin: 8px 0;
+}
+.hotel-table thead th {
+  background: var(--sky);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.hotel-table tbody tr:nth-child(even) td { background: var(--sky-pale); }
+.hotel-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #D6EAF8;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.hotel-table td:first-child { font-weight: 600; color: var(--ink); }
+.hotel-table td:nth-child(2) {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--sage);
+  white-space: nowrap;
+}
+
+/* ── TOUR TABLE ─────────────────────────────────────────────────────────── */
+.tour-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin: 8px 0;
+}
+.tour-table thead th {
+  background: var(--ember);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  padding: 7px 10px;
+  text-align: left;
+}
+.tour-table tbody tr:nth-child(even) td { background: var(--ember-pale); }
+.tour-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #F0C080;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.tour-table td a { color: var(--sky); }
+
+/* ── INLINE PHOTO ───────────────────────────────────────────────────────── */
+.photo-strip {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+.photo-strip.two { grid-template-columns: 1fr 1fr; }
+.photo-strip.three { grid-template-columns: 1fr 1fr 1fr; }
+
+.photo-item { position: relative; overflow: hidden; }
+.photo-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.photo-item.tall img { height: 200px; }
+
+.photo-caption {
+  font-family: var(--font-mono);
+  font-size: 6.5pt;
+  color: var(--stone);
+  padding: 4px 6px;
+  background: var(--stone-pale);
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+/* ── GPX REFERENCE ──────────────────────────────────────────────────────── */
+.gpx-box {
+  background: var(--night);
+  padding: 10px 14px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gpx-icon {
+  font-size: 18pt;
+  flex-shrink: 0;
+}
+
+.gpx-label {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--sand-dark);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.gpx-name {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  color: var(--ember);
+  font-weight: 600;
+}
+
+.gpx-note {
+  font-size: 8pt;
+  color: rgba(232,213,183,0.6);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* ── REFERENCE PAGE ─────────────────────────────────────────────────────── */
+.ref-page {
+  padding: var(--margin);
+  page-break-before: always;
+}
+
+.ref-page h2 {
+  font-family: var(--font-display);
+  font-size: 24pt;
+  color: var(--rust);
+  margin-bottom: 6px;
+}
+
+.ref-section h3 {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  color: var(--rust);
+  border-bottom: 1px solid var(--sand);
+  padding-bottom: 4px;
+  margin: 16px 0 8px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+  margin: 6px 0;
+}
+
+.link-item {
+  font-size: 8.5pt;
+  padding: 3px 0;
+  border-bottom: 1px dotted var(--sand);
+}
+
+.link-item a {
+  color: var(--sky);
+  text-decoration: none;
+  font-weight: 600;
+}
+.link-item a:hover { text-decoration: underline; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+  margin: 6px 0;
+}
+
+.contact-item {
+  font-size: 8.5pt;
+  line-height: 1.5;
+}
+.contact-item strong { color: var(--ink); display: block; }
+.contact-item span { color: var(--stone); font-family: var(--font-mono); font-size: 8pt; }
+
+.gpx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin: 8px 0;
+}
+.gpx-table th {
+  background: var(--pine);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  padding: 6px 10px;
+  text-align: left;
+}
+.gpx-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--sand);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.gpx-table td:first-child {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--pine);
+  white-space: nowrap;
+}
+.gpx-table tr:nth-child(even) td { background: var(--sage-pale); }
+
+.lc-notes { list-style: none; padding: 0; }
+.lc-notes li {
+  font-size: 8.5pt;
+  padding: 4px 0 4px 20px;
+  position: relative;
+  border-bottom: 1px dotted var(--sand);
+  line-height: 1.5;
+}
+.lc-notes li::before { content: '🔧'; position: absolute; left: 0; font-size: 8pt; }
+
+/* ── WARNING BADGE ──────────────────────────────────────────────────────── */
+.warning {
+  background: #FEF3CD;
+  border: 1px solid #F6C23E;
+  border-left: 4px solid #D4A017;
+  padding: 8px 12px;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  margin: 6px 0;
+  color: #5D4E37;
+}
+.warning strong { color: #9B6800; }
+
+/* ── PAGE HEADER (print pages) ──────────────────────────────────────────── */
+.page-header-bar {
+  background: var(--night);
+  padding: 6px var(--margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-header-bar span {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--sand-dark);
+  letter-spacing: 0.08em;
+}
+.page-header-bar strong { color: var(--ember); }
+
+/* ── PRINT STYLES ───────────────────────────────────────────────────────── */
+@media print {
+  body { background: white; }
+  .book { box-shadow: none; max-width: 100%; }
+  .cover { min-height: 0; height: 10.5in; }
+  .day-page { page-break-before: always; }
+  .no-break { page-break-inside: avoid; }
+  a { color: var(--sky) !important; }
+  .map-link { border: 1px solid var(--sky) !important; }
+
+  @page {
+    size: letter;
+    margin: 0;
+  }
+}
+
+/* ── UTILITY ────────────────────────────────────────────────────────────── */
+.mt4 { margin-top: 4px; }
+.mt8 { margin-top: 8px; }
+.mt12 { margin-top: 12px; }
+p { font-size: 9.5pt; line-height: 1.65; margin-bottom: 6px; }
+a { color: var(--sky); }
+</style>
+</head>
+<body>
+<div class="book">
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  COVER PAGE                                                           -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <img class="cover-hero"
+    src="images/00.jpg"
+    alt="Grand Canyon">
+  <div class="cover-gradient"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">🏔 Two Adventurers · One Land Cruiser · 16 Days</div>
+    <div class="cover-title">Overlanding<br><span>the Southwest</span></div>
+    <div class="cover-sub">SLC → Valley of Fire → Sedona → Grand Canyon → Page → Bears Ears → Bryce Canyon</div>
+    <div class="cover-dates">APR 20 – MAY 5, 2025 &nbsp;·&nbsp; ~1,800 MILES</div>
+    <div class="cover-divider"></div>
+    <table class="cover-table">
+      <thead>
+        <tr>
+          <th>Date</th><th>Destination</th><th>Drive</th><th>Sleep</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Apr 20</td><td>Valley of Fire NV</td><td>~4.5 hrs</td><td>Atlatl Rock or Arch Rock CG</td></tr>
+        <tr><td>Apr 21</td><td>Bullhead City → Silver Creek Rd (dirt) → Oatman → Kingman</td><td>~4.5 hrs</td><td>Hotel</td></tr>
+        <tr><td>Apr 22–23</td><td>Sedona — Red Rock Country</td><td>~2.5 hrs</td><td>Pine Flat West #22</td></tr>
+        <tr><td>Apr 24</td><td>Sedona rest day</td><td>—</td><td>3–4★ Hotel</td></tr>
+        <tr><td>Apr 25</td><td>Edge of the World, AZ</td><td>~2 hrs from hotel</td><td>East Pocket rim dispersed</td></tr>
+        <tr><td>Apr 26–28</td><td>Grand Canyon South Rim</td><td>~2 hrs</td><td>Desert View CG #24</td></tr>
+        <tr><td>Apr 29</td><td>Horseshoe Bend + Page</td><td>~2.5 hrs</td><td>3–4★ Hotel</td></tr>
+        <tr><td>Apr 30</td><td>Antelope Slot Canyon</td><td>—</td><td>Lone Rock Beach BLM</td></tr>
+        <tr><td>May 1</td><td>Muley Point, Cedar Mesa</td><td>~2 hrs</td><td>BLM rim dispersed</td></tr>
+        <tr><td>May 2</td><td>Kodachrome Basin / Grand Staircase</td><td>~2.5 hrs</td><td>BLM dispersed</td></tr>
+        <tr><td>May 3–5</td><td>Bryce Canyon NP</td><td>~2 hrs</td><td>North CG Loop B #48</td></tr>
+      </tbody>
+    </table>
+    <div class="cover-note">
+      Each evening section gives you <strong>3 curated day options</strong>, hike details, camp alternatives, golden hour recommendations, and quick-decision pivots.
+      <br>GPX files for OnX Offroad, Gaia GPS & Google Maps included as separate downloads.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 1 — Valley of Fire                                               -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar">
+    <span>🏔 Southwest Overland · Apr 20 – May 5</span>
+    <span><strong>DAY 1</strong> · Valley of Fire, NV</span>
+  </div>
+  <div class="day-banner">
+    <img src="images/01.jpg" alt="Valley of Fire">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 1 of 16</div>
+      <div class="day-title-block">
+        <div class="day-date">April 20 · SLC → Valley of Fire NV · ~4.5 hrs</div>
+        <div class="day-title">Valley of Fire</div>
+        <div class="day-subtitle">Mars-red slickrock, 2,500-year-old petroglyphs, and a sunset that will rearrange your concept of color</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="images/salt_lake-valley.png" alt="Day 1 — SLC to Valley of Fire" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/Salt%20Lake%20City%2C%20UT/St.%20George%2C%20UT/Mesquite%2C%20NV/36.4882%2C-114.5290/36.4452%2C-114.5354" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="route-strip">
+      <div class="route-stop"><span class="stop-dot start"></span><span class="stop-label start">SLC</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">St. George UT</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">Mesquite NV</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot end"></span><span class="stop-label end">🏕 Valley of Fire</span></div>
+    </div>
+
+    <div class="section-header"><h3>🌄 What Today Feels Like</h3><div class="section-rule"></div></div>
+    <div class="feel-box">
+      <span class="energy-badge">⚡ Medium Energy</span>
+      You leave the mundane behind the moment you cross into Nevada. Alien-red sandstone formations rise without warning from the Mojave floor — one of the most photogenic state parks in the West and barely known outside the Southwest. Drive 4.5 hrs, then hike at your own pace as golden hour approaches. <strong>Why it's special:</strong> you're camping inside the fire itself. April temperatures are perfect (65–85°F days, 50s at night).
+    </div>
+
+    <div class="gpx-box">
+      <span class="gpx-icon">🗺️</span>
+      <div>
+        <span class="gpx-label">GPX Track</span>
+        <span class="gpx-name"><a href="https://www.google.com/maps/dir/Salt%20Lake%20City%2C%20UT/St.%20George%2C%20UT/Mesquite%2C%20NV/36.4882%2C-114.5290/36.4452%2C-114.5354" target="_blank" style="color:var(--ember);text-decoration:none;">Valley_of_Fire_to_Sedona.gpx → Open Route in Maps</a></span>
+        <div class="gpx-note">All waypoints: Fire Wave, White Domes, Petroglyph Canyon, Elephant Rock, both campgrounds</div>
+      </div>
+    </div>
+
+    <div class="photo-strip two">
+      <div class="photo-item">
+        <img src="images/02.jpg" alt="Fire Wave">
+        <div class="photo-caption">🔥 Fire Wave — swirling pink/orange slickrock · 1.5 mi RT from Lot 3</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/03.jpg" alt="White Domes">
+        <div class="photo-caption">🌀 White Domes Loop — slot canyon + movie set ruins · 1.1 mi loop</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Choose Your Afternoon (arrive ~2–3 PM)</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Recommended Option A</div>
+        <h4>Fire Wave + White Domes</h4>
+        <p>The two best hikes back-to-back. Fire Wave is the icon. White Domes surprises with a slot canyon. Together: under 3 miles total.</p>
+        <div class="option-stops"><strong>Stops:</strong> Elephant Rock (roadside) → Fire Wave → White Domes Loop</div>
+        <div class="option-stops"><strong>Hike:</strong> Fire Wave (1.5 mi RT) + White Domes (1.1 mi loop)</div>
+        <div class="option-why">Best payoff per mile in the park. White Domes adds a surprise slot canyon. Do both or regret it.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=36.4882,-114.5290" target="_blank">Fire Wave</a>
+          <a class="map-link" href="https://maps.google.com/?q=36.4859,-114.5329" target="_blank">White Domes</a>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option B — Cultural + Views</div>
+        <h4>Petroglyph Canyon + Rainbow Vista</h4>
+        <p>Ancient Ancestral Puebloan rock art (2,500 years old) then a sweeping panoramic overlook with far fewer crowds.</p>
+        <div class="option-stops"><strong>Stops:</strong> Mouse's Tank Road Viewpoint → Petroglyph Canyon → Rainbow Vista</div>
+        <div class="option-stops"><strong>Hike:</strong> Mouse's Tank Trail (2.0 mi RT)</div>
+        <div class="option-why">If you love human history and quiet. Rainbow Vista has arguably the park's best panoramic view.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=36.4725,-114.5309" target="_blank">Petroglyph</a>
+          <a class="map-link" href="https://maps.google.com/?q=36.4823,-114.5249" target="_blank">Rainbow Vista</a>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option C — Late Arrival (under 2 hrs)</div>
+        <h4>Elephant Rock + Fire Wave</h4>
+        <p>Elephant Rock is 50 ft from the car. Fire Wave is 1.5 miles. Both are icons. Save White Domes for sunrise tomorrow.</p>
+        <div class="option-stops"><strong>Hike:</strong> Fire Wave Trail (1.5 mi RT)</div>
+        <div class="option-why">Best if arriving after 4 PM. Still get the money shot. Elephant Rock is a 10-minute walk.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=36.4281,-114.5057" target="_blank">Elephant Rock</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🥾 Hikes in Detail</h3><div class="section-rule"></div></div>
+    <div class="hikes-grid">
+      <div class="hike-card">
+        <h4>🔥 Fire Wave Trail</h4>
+        <div class="hike-meta">1.5 mi RT · ~45 min · minimal elevation</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Swirling pink/orange slickrock — most photographed formation in the park</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Moderate on weekends — arrive before 9 AM or after 3 PM in spring</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Walk beyond the Fire Wave — the surrounding plateau is equally stunning</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Highest reward per effort in the park</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🌀 White Domes Loop</h4>
+        <div class="hike-meta">1.1 mi loop · ~35 min</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Slot canyon + giant domed formations + old film set ruins — all in 1.1 miles</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Lightest in the park — very few people walk to the end</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Only slot canyon in park. Goes through a genuine 1960s western film set.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Punches above its weight</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🪨 Mouse's Tank / Petroglyph Canyon</h4>
+        <div class="hike-meta">2.0 mi RT · ~1 hr</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">2,500-year-old Ancestral Puebloan petroglyphs covering canyon walls</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Very low — most visitors only walk 0.3 mi, canyon walls are at the end</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Natural water tank (tinaja) collects runoff — watch for bighorn sheep at dusk</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Unique cultural layer to the park</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Camp Tonight</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View</span>
+        <div class="camp-cell">
+          <strong>Atlatl Rock Campground</strong>
+          Direct red rock formation views from most sites. Petroglyph panel nearby.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.4452,-114.5354" target="_blank">36.4452, -114.5354</a></span>
+          <span class="price">$20/night · Drive-up OK April weekdays</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Wind-Protected</span>
+        <div class="camp-cell">
+          <strong>Arch Rock Campground</strong>
+          Tucked against canyon walls. More wind shelter. Still great rock views.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.4580,-114.5354" target="_blank">36.4580, -114.5354</a></span>
+          <span class="price">$20/night · Recommended if windy</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Easy Backup</span>
+        <div class="camp-cell">
+          <strong>Either — April availability</strong>
+          Both campgrounds rarely fill on April weekdays. No reservation needed. First-come sites available.
+          <span class="price">Drive up · No advance booking needed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 Golden Hour Recommendation</div>
+      <dl>
+        <dt>Where</dt><dd>Mouse's Tank Road Viewpoint — park and climb the rocks south of the pullout. The road bends through a canyon of rounded boulders.</dd>
+        <dt>Why It Matters</dt><dd>The most-photographed scene in the park. Light goes nuclear orange on the red boulders. The road curves like a painting.</dd>
+        <dt>Worth Crowds?</dt><dd>Yes — April crowds here are minimal compared to Zion or Arches. Arrive 45 min before sunset. <a href="https://maps.google.com/?q=36.4725,-114.5309" target="_blank">→ Maps</a></dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">Wind &gt; 25 mph</span><span class="decision-arrow">→</span><span class="decision-action">Skip Fire Wave (slippery slickrock) — do White Domes slot canyon instead</span></div>
+        <div class="decision-row"><span class="decision-icon">👥</span><span class="decision-trigger">Fire Wave lot full</span><span class="decision-arrow">→</span><span class="decision-action">Do White Domes first, return after 3 PM when lot clears</span></div>
+        <div class="decision-row"><span class="decision-icon">🌡️</span><span class="decision-trigger">Temp &gt; 85°F</span><span class="decision-arrow">→</span><span class="decision-action">Start hikes before 9 AM, sheltered at Arch Rock CG midday</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li>Fill up in St. George UT (I-15 exit) — last cheap gas before park</li>
+          <li>Mesquite NV on I-15 also has gas, slightly pricier</li>
+          <li>No fuel inside Valley of Fire — top off before entering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Push deeper:</strong> Unmarked slickrock beyond Fire Wave — wander freely on the rock. Park at White Domes and scout the unnamed draws north of the loop.</div>
+      <div class="lc-avoid"><strong>Avoid:</strong> No technical terrain today — but remember park rules prohibit off-road driving. Stay on designated roads.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 2 — Kingman                                                      -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar">
+    <span>🏔 Southwest Overland · Apr 20 – May 5</span>
+    <span><strong>DAY 2</strong> · Valley of Fire → Bullhead City → Oatman → Kingman</span>
+  </div>
+  <div class="day-banner">
+    <img src="images/04.jpg" alt="Oatman Route 66">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 2 of 16</div>
+      <div class="day-title-block">
+        <div class="day-date">April 21 · ~4.5 hrs total · Mojave Desert + Dirt Road + Ghost Town</div>
+        <div class="day-title">The Oatman Dirt Road Adventure</div>
+        <div class="day-subtitle">Cross the Mojave, drive a real dirt road through gold mine country, feed wild burros in a 180-year-old ghost town, then finish on Historic Route 66 over the mountains to Kingman</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="images/valley-kingman.png" alt="Day 2 route map" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/36.4452,-114.5354/35.9785,-114.8328/35.1447,-114.5682/35.0264,-114.3836/Kingman+AZ" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="route-strip">
+      <div class="route-stop"><span class="stop-dot start"></span><span class="stop-label start">Valley of Fire</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">Boulder City NV</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">Bullhead City AZ (fuel)</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">🟢 Silver Creek Rd (dirt)</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">Oatman 🫏 Route 66</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot"></span><span class="stop-label">Sitgreaves Pass</span></div>
+      <div class="route-line"></div>
+      <div class="route-stop"><span class="stop-dot end"></span><span class="stop-label end">🏨 Kingman AZ</span></div>
+    </div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🟡 Medium Energy · All-Day Story</span>
+      This is the day the trip earns its overlanding title. Instead of a boring highway slab to Kingman, you leave the red rocks of Valley of Fire, cross the Mojave to the Colorado River, then swap pavement for 14 miles of wide, easy desert dirt road through abandoned gold mine country — the Silver Creek Road section of the Arizona Peace Trail. You emerge in Oatman: a genuine 1800s mining ghost town with wild burros wandering the main street, a century-old saloon, and more character than anywhere else on this drive. Then you finish on Historic Route 66 over Sitgreaves Pass — a real mountain road with sweeping views — into Kingman for the night. Four completely different landscapes. Two pieces of American history. One very happy Land Cruiser.
+    </div>
+
+    <div class="camp-info-box">
+      <strong>🫏 Why this route instead of the highway?</strong><br>
+      The straight I-40 option gets you to Kingman faster but gives you nothing — just interstate and truck stops. This route costs 45 extra minutes and gives you: a proper dirt road warm-up for the trip ahead, a ghost town straight out of a western film, wild burros that will literally eat out of your hand, and the most scenic mountain pass on all of Historic Route 66. It's the difference between driving <em>through</em> the Southwest and actually <em>experiencing</em> it — which is the whole point of this trip.
+    </div>
+
+    <div class="section-header"><h3>🗺️ The Route — Segment by Segment</h3><div class="section-rule"></div></div>
+
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">Segment 1 — Paved · ~1 hr</div>
+        <h4>Valley of Fire → Bullhead City</h4>
+        <p>Head south on I-15 briefly, then US-93 past Boulder City and the Nevada side of Hoover Dam, dropping into the Colorado River valley at Laughlin/Bullhead City. Fuel up here — this is the last reliable cheap gas until Kingman.</p>
+        <div class="option-stops"><strong>Fuel stop:</strong> Bullhead City — top off completely</div>
+        <div class="option-why">The drive through the Mojave opens up beautifully in the morning light. The Colorado River appears suddenly as you drop into the valley — genuinely pretty.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=35.1447,-114.5682" target="_blank">Bullhead City AZ</a>
+        </div>
+      </div>
+
+      <div class="option-card recommended">
+        <div class="option-label">★ Segment 2 — Silver Creek Road (DIRT) · ~1 hr</div>
+        <h4>Bullhead City → Oatman via Silver Creek Road</h4>
+        <p>From Bullhead City, take SR-95 south to Silver Creek Road — when the pavement ends, the adventure begins. This 14-mile graded dirt road is the northern section of the Arizona Peace Trail, passing through Black Mountain gold mine country with sweeping desert views. It's wide enough for two vehicles and regularly maintained. Your Land Cruiser will handle it without breaking a sweat.</p>
+        <div class="option-stops"><strong>Distance:</strong> 14 miles of easy dirt · <strong>Surface:</strong> Wide graded road, two vehicles wide</div>
+        <div class="option-stops"><strong>What you'll see:</strong> Active gold mines, abandoned mining ruins, volcanic rock formations, wild burros, panoramic Mojave Desert views to the west</div>
+        <div class="option-why">This is your first real dirt road of the trip — a perfect warm-up. Easy enough to relax into, interesting enough to remember. Download the route in OnX or Gaia before leaving Bullhead City as cell service fades.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=Silver+Creek+Road+Bullhead+City+AZ" target="_blank">Silver Creek Rd Start</a>
+          <a class="map-link" href="https://www.onxmaps.com/offroad/trails/us/arizona/azpt-bullhead-to-oatman-bypass-easy" target="_blank">OnX Trail Info</a>
+        </div>
+      </div>
+
+      <div class="option-card recommended">
+        <div class="option-label">★ Segment 3 — Oatman Stop · 45–60 min</div>
+        <h4>Oatman, AZ — The Ghost Town</h4>
+        <p>You roll into Oatman and immediately understand why people make special trips here. Wild burros wander the wooden sidewalks begging for carrots. The Oatman Hotel has been open since 1902 and still serves food by the fireplace. Old gold mine buildings line the street. It's the real thing — not a theme park.</p>
+        <div class="option-stops"><strong>Must do:</strong> Feed the burros (buy hay/carrots at the general store · $1) · Peek inside the Oatman Hotel · Walk the full length of Main Street</div>
+        <div class="option-stops"><strong>Lunch:</strong> Oatman Hotel restaurant — open daily, good burgers, cold beer, genuinely historic atmosphere</div>
+        <div class="option-why">This is the moment of the day your wife will photograph the most and talk about longest. Burros with their heads in the car window have that effect on people.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=35.0264,-114.3836" target="_blank">Oatman Main Street</a>
+          <a class="map-link" href="https://maps.google.com/?q=Oatman+Hotel+Arizona" target="_blank">Oatman Hotel (lunch)</a>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-label">Segment 4 — Historic Route 66 · ~45 min</div>
+        <h4>Oatman → Sitgreaves Pass → Kingman</h4>
+        <p>Leave Oatman heading east on Historic Route 66 — a narrow, winding mountain road that climbs over Sitgreaves Pass at 3,550 feet with spectacular views back across the Mojave. This is genuine old Route 66, unchanged since the 1930s. All paved, but tight and scenic.</p>
+        <div class="option-stops"><strong>Distance:</strong> 28 miles paved · <strong>Time:</strong> ~45 min (slow, scenic mountain road)</div>
+        <div class="option-why">The switchbacks over Sitgreaves Pass are the most dramatic piece of paved road on Day 2. Pull off at the top for the view — you can see back to the Colorado River.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=Sitgreaves+Pass+Arizona+Route+66" target="_blank">Sitgreaves Pass</a>
+          <a class="map-link" href="https://maps.google.com/?q=35.1894,-114.0530" target="_blank">Kingman AZ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>⏱️ Full Day Timeline</h3><div class="section-rule"></div></div>
+    <table class="hotel-table">
+      <thead><tr><th>Segment</th><th>Type</th><th>Distance</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td>Valley of Fire → Bullhead City</td><td>Paved highway</td><td>~95 mi</td><td>~1 hr 15 min</td></tr>
+        <tr><td>Bullhead City fuel stop</td><td>—</td><td>—</td><td>20 min</td></tr>
+        <tr><td>Silver Creek Road (dirt) → Oatman</td><td>🟢 Easy dirt road</td><td>~14 mi</td><td>45–60 min</td></tr>
+        <tr><td>Oatman stop — burros + lunch</td><td>Ghost town</td><td>—</td><td>45–60 min</td></tr>
+        <tr><td>Oatman → Sitgreaves Pass → Kingman</td><td>Historic Route 66</td><td>28 mi</td><td>~45 min</td></tr>
+        <tr><td><strong>Total</strong></td><td></td><td><strong>~137 mi</strong></td><td><strong>~4–4.5 hrs</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:var(--stone);margin-top:4px;font-style:italic;">Arrive Kingman by 2–3 PM with afternoon to settle in and plan tomorrow's Sedona drive over dinner.</p>
+
+    <div class="section-header"><h3>🏨 Kingman Hotel Picks (~$90–130/night)</h3><div class="section-rule"></div></div>
+    <table class="hotel-table">
+      <thead><tr><th>Hotel</th><th>Est. Rate</th><th>Why Choose It</th><th>Book</th></tr></thead>
+      <tbody>
+        <tr><td>Holiday Inn Express Kingman</td><td>$95–120</td><td>Clean, solid breakfast, pool, easy highway access for rigs</td><td><a href="https://www.ihg.com" target="_blank">ihg.com</a></td></tr>
+        <tr><td>Hampton Inn Kingman</td><td>$110–130</td><td>Quieter, great parking for overland rig, consistent quality</td><td><a href="https://www.hilton.com" target="_blank">hilton.com</a></td></tr>
+        <tr><td>Best Western Plus King's Inn</td><td>$85–105</td><td>Budget option, decent amenities, right off I-40</td><td><a href="https://www.bestwestern.com" target="_blank">bestwestern.com</a></td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">🌧️</span><span class="decision-trigger">Rain overnight/morning</span><span class="decision-arrow">→</span><span class="decision-action">Skip Silver Creek Rd — take US-95 south to Boundary Cone Rd to Oatman (fully paved alternate, adds 15 min)</span></div>
+        <div class="decision-row"><span class="decision-icon">🚛</span><span class="decision-trigger">Mine trucks on Silver Creek Rd</span><span class="decision-arrow">→</span><span class="decision-action">Pull completely off the road and let them pass — road is wide enough</span></div>
+        <div class="decision-row"><span class="decision-icon">🫏</span><span class="decision-trigger">Burros blocking the road in Oatman</span><span class="decision-arrow">→</span><span class="decision-action">This is not a problem — it is the experience</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li><strong>Fill completely in Bullhead City</strong> — no fuel on Silver Creek Rd</li>
+          <li>Oatman has fuel but it's expensive and limited — don't rely on it</li>
+          <li>Kingman has Costco (Andy Devine Ave) — fill up here for the Sedona drive</li>
+          <li>Check BLM road conditions: (928) 718-3700</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Silver Creek Road is made for you:</strong> Wide, graded, easy — but most rental cars and low-clearance vehicles skip it entirely. You'll have the mines and the views mostly to yourself. Air down to 28 PSI for a smoother ride on the washboard sections.</div>
+      <div class="lc-avoid"><strong>Avoid Silver Creek Rd if:</strong> It rained in the last 24 hours. The road gets greasy clay ruts when wet. Take the paved Boundary Cone Rd alternate instead — no shame in it.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-page">
+  <div class="page-header-bar">
+    <span>🏔 Southwest Overland · Apr 20 – May 5</span>
+    <span><strong>DAYS 3–4</strong> · Sedona, AZ — Pine Flat West #22</span>
+  </div>
+  <div class="day-banner">
+    <img src="images/05.jpg" alt="Cathedral Rock Sedona">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Days 3–4 · Apr 22–23</div>
+      <div class="day-title-block">
+        <div class="day-date">April 22–23 · 2 Days · Pine Flat West CG Site #22</div>
+        <div class="day-title">Sedona Red Rock Country</div>
+        <div class="day-subtitle">Towering red buttes, creek-side ponderosa camp on Oak Creek, world-class trails, and a 4x4 road that rewards your Land Cruiser</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="images/kingman-sedona.png" alt="Days 3–4 — Sedona" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/Kingman+AZ/Sedona+AZ/34.9891,-111.7511" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="camp-info-box">
+      <strong>🏕 Pine Flat West Campground — Site #22 (Reserved)</strong><br>
+      89A mile marker 385, Oak Creek Canyon, Coconino National Forest. Direct Oak Creek access from your site — ponderosa pines, stocked trout, swimming holes. Vault toilets, drinking water. No hookups/showers.
+      <br><a href="https://maps.google.com/?q=34.9891,-111.7511" target="_blank">📍 Google Maps → Pine Flat West</a> &nbsp;|&nbsp; <a href="https://www.recreation.gov/camping/campgrounds/232320" target="_blank">📋 Recreation.gov Reservation</a> &nbsp;|&nbsp; Red Rock Pass required for trailhead parking ($5/day)
+    </div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🔴 High Energy</span>
+      Sedona operates at maximum sensory overload — towering red buttes, creek-side camp in ponderosa pines, and trails that beg you to push further. Two days splits the classic hikes on Day 1 and the quieter gems on Day 2. <strong>Why it's special:</strong> the creek runs next to your tent and red cliffs rise above — you wake up inside a postcard.
+    </div>
+
+    <div class="photo-strip three">
+      <div class="photo-item">
+        <img src="images/06.jpg" alt="Cathedral Rock">
+        <div class="photo-caption">Cathedral Rock — sunset scramble, 1.5 mi RT</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/07.jpg" alt="West Fork">
+        <div class="photo-caption">West Fork Trail — 6 mi RT canyon hike</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/08.jpg" alt="Devil's Bridge">
+        <div class="photo-caption">Devil's Bridge — 54 ft arch, 4x4 shortcut available</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Day 1 (Apr 22) — Classic Icons</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Option A — The Icons</div>
+        <h4>Bell Rock + Cathedral Rock</h4>
+        <p>The two most famous formations in Sedona. Bell Rock is a beautiful scramble. Cathedral Rock at sunset over the creek is unforgettable.</p>
+        <div class="option-stops"><strong>Route:</strong> Bell Rock Vista → scramble base → Cathedral Rock via Crescent Moon → Oak Creek swim</div>
+        <div class="option-stops"><strong>Hikes:</strong> Bell Rock (1.5 mi) + Cathedral Rock (1.5 mi RT)</div>
+        <div class="option-why">Best for first Sedona visit. Cathedral Rock at sunset over Oak Creek is the quintessential Sedona moment.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=Bell+Rock+Trail+Sedona+AZ" target="_blank">Bell Rock</a>
+          <a class="map-link" href="https://maps.google.com/?q=Cathedral+Rock+Trail+Sedona+AZ" target="_blank">Cathedral Rock</a>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option B — 4x4 Adventure</div>
+        <h4>Devil's Bridge (4x4 Shortcut)</h4>
+        <p>Devil's Bridge is the most photographed arch in Arizona. Take the Mescal 4x4 road shortcut — your LC cuts 2 miles off and you avoid 80% of the crowds.</p>
+        <div class="option-stops"><strong>Route:</strong> Mescal 4x4 road start → Devil's Bridge → Boynton Canyon vortex</div>
+        <div class="option-stops"><strong>Hike:</strong> 1.8 mi RT via 4x4 road (4.0 mi standard)</div>
+        <div class="option-why">The 4x4 Mescal road shortcut is your Land Cruiser's first earned reward. Fewer crowds, same epic arch.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=34.8976,-111.8077" target="_blank">Devil's Bridge</a>
+          <a class="map-link" href="https://maps.google.com/?q=34.9028,-111.8138" target="_blank">Mescal 4x4 Start</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Day 2 (Apr 23) — Go Deeper</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Option A — The Showstopper</div>
+        <h4>West Fork Trail</h4>
+        <p>Widely considered one of the most beautiful canyon hikes in Arizona. 6 miles of narrowing canyon walls, creek crossings, and spring wildflowers. Go early to beat the crowd.</p>
+        <div class="option-stops"><strong>Route:</strong> West Fork Trailhead → canyon walk → 3 mi turnaround → camp swim</div>
+        <div class="option-stops"><strong>Hike:</strong> 6 mi RT · 3–4 hrs · easy terrain</div>
+        <div class="option-why">Lives rent-free in everyone's memory. The canyon walls close in progressively — the best views are beyond mile 2 where most people turn back.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=34.9907,-111.7425" target="_blank">West Fork Trailhead</a>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option B — Panoramic + 4x4</div>
+        <h4>Airport Mesa + Schnebly Hill Road</h4>
+        <p>Airport Mesa gives the best panoramic city view of all red rock formations. Then drive Schnebly Hill Road (rough, 4x4 required) for private canyon views from above.</p>
+        <div class="option-stops"><strong>Route:</strong> Airport Mesa loop → Schnebly Hill Road drive → Merry-Go-Round Rock</div>
+        <div class="option-stops"><strong>Hike:</strong> Airport Mesa Loop (3.5 mi)</div>
+        <div class="option-why">Schnebly Hill is your Land Cruiser's moment to shine. Most tourists can't get there. Views rival anything in the park.</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=Airport+Mesa+Loop+Trail+Sedona+AZ" target="_blank">Airport Mesa</a>
+          <a class="map-link" href="https://maps.google.com/?q=34.8652,-111.7502" target="_blank">Schnebly Hill Start</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🥾 Featured Hikes</h3><div class="section-rule"></div></div>
+    <div class="hikes-grid">
+      <div class="hike-card">
+        <h4>🌊 West Fork Trail</h4>
+        <div class="hike-meta">6 mi RT · 3–4 hrs · easy canyon walk</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Narrow red canyon with creek crossings, wildflowers, 300-ft walls</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Heavy 9 AM–noon. Go before 8 AM or after 3 PM.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Most people turn back at mile 2. Push to mile 3 where it gets magical.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Most memorable hike in Sedona</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🌉 Devil's Bridge</h4>
+        <div class="hike-meta">4.0 mi RT (or 1.8 mi via 4x4 road)</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Stand on the largest natural arch in Sedona — 54 ft wide, 45 ft high</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Busiest in Sedona after 9 AM. Use 4x4 shortcut to arrive early with less company.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Mescal dirt road shortcut — your LC cuts 2 miles off. Park at 4x4 lot.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Worth it, especially via 4x4 shortcut</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>⛪ Cathedral Rock</h4>
+        <div class="hike-meta">1.5 mi RT · ~1.5 hrs · hands-on scramble</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Scramble to a saddle with panoramic red rock and creek views</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Very busy at sunrise/sunset — those are the best times anyway</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Final 0.3 mi is hands-and-feet sandstone scrambling — iron holds in place</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Don't skip it</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Dispersed Camp Alternatives to Pine Flat</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View</span>
+        <div class="camp-cell">
+          <strong>Schnebly Hill Road Dispersed</strong>
+          Epic red rock canyon views. Off FR 153. Rough — 4x4 required.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=34.8652,-111.7502" target="_blank">34.8652, -111.7502</a></span>
+          <span class="price">Free · 14-day max · 4x4 required</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Wind-Protected</span>
+        <div class="camp-cell">
+          <strong>West Sedona Designated Dispersed</strong>
+          Forest Rd 525 off Angel Valley Rd. Tree-protected, ~8 sites.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=34.8766,-111.8459" target="_blank">34.8766, -111.8459</a></span>
+          <span class="price">Free · 200 sites across 36 acres</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Easy Backup</span>
+        <div class="camp-cell">
+          <strong>Pumphouse Wash (FR 237)</strong>
+          Near Oak Creek Canyon, more accessible than Schnebly. High clearance preferred.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=34.9850,-111.7660" target="_blank">34.9850, -111.7660</a></span>
+          <span class="price">Free · Good dry-weather access</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 Golden Hour — Cathedral Rock from Red Rock Crossing</div>
+      <dl>
+        <dt>Where</dt><dd>Crescent Moon Ranch (Red Rock Crossing) — arrive 45 min before sunset. $11/car entry.</dd>
+        <dt>Why It Matters</dt><dd>Cathedral Rock turns blood-orange and reflects in Oak Creek below. One of the most photographed scenes in all of Arizona.</dd>
+        <dt>Worth It?</dt><dd>Absolutely. The $11 fee is well worth it. Arrive early for a good spot near the creek. <a href="https://maps.google.com/?q=34.8261,-111.7888" target="_blank">→ Maps</a></dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">Wind + cold canyon</span><span class="decision-arrow">→</span><span class="decision-action">Drive to West Sedona dispersed — sheltered by forest</span></div>
+        <div class="decision-row"><span class="decision-icon">👥</span><span class="decision-trigger">West Fork lot full</span><span class="decision-arrow">→</span><span class="decision-action">Park at Bootlegger CG and walk in, or do Huckaby Trail instead</span></div>
+        <div class="decision-row"><span class="decision-icon">🌧️</span><span class="decision-trigger">Rain forecast</span><span class="decision-arrow">→</span><span class="decision-action">Schnebly Hill impassable clay — do West Fork instead</span></div>
+        <div class="decision-row"><span class="decision-icon">🔥</span><span class="decision-trigger">Fire restrictions</span><span class="decision-arrow">→</span><span class="decision-action">Call Flagstaff Ranger District: (928) 526-0866</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li>Fill in Sedona/Village of Oak Creek ($0.20–0.40 more than Flagstaff)</li>
+          <li>Flagstaff Costco (~30 min north) is cheapest in region</li>
+          <li>Carry extra 2 gal if doing Schnebly Hill — no fuel until back in Sedona</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Push deeper:</strong> Schnebly Hill Road (FR 153) — rough, rocky, absolutely worth it. Mescal Trailhead 4x4 road to Devil's Bridge cuts 2 miles off and filters 90% of tourists.</div>
+      <div class="lc-avoid"><strong>Avoid:</strong> FR 525 west of Sedona after rain — red clay sticks to tires and differentials and doesn't come off easily.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 5 — Sedona Hotel Rest Day                                        -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAY 5</strong> · Sedona Hotel Rest Day</span></div>
+  <div class="day-banner">
+    <img src="images/09.jpg" alt="Sedona panorama">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 5 · Apr 24</div>
+      <div class="day-title-block">
+        <div class="day-date">April 24 · Sedona Rest Day · Affordable 3–4★ Hotel</div>
+        <div class="day-title">Sedona Hotel Day</div>
+        <div class="day-subtitle">Real shower, great dinner, easy vortex walks, and evening planning for the Grand Canyon</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="images/pine_campground-sedona.png" alt="Day 5 — Sedona Hotel Day" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/34.9891%2C-111.7511/34.8557%2C-111.7803/34.8268%2C-111.7629/34.8697%2C-111.7610" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🟢 Rest Day</span>
+      You've earned a bed, a real shower, and a dinner you didn't cook over a camp stove. Walk the easy vortex sites, eat well, and study the Grand Canyon section over dinner. Low commitment, high pleasure.
+    </div>
+
+    <div class="section-header"><h3>🏨 Affordable 3–4★ Hotel Picks</h3><div class="section-rule"></div></div>
+    <table class="hotel-table">
+      <thead><tr><th>Hotel</th><th>Est. Rate (Apr)</th><th>Why Choose It</th><th>Book At</th></tr></thead>
+      <tbody>
+        <tr><td>Sky Rock Inn of Sedona</td><td>$120–160/nt</td><td>Best value with a genuine view. Pool, comfortable, panoramic setting.</td><td><a href="https://www.hotels.com" target="_blank">hotels.com</a></td></tr>
+        <tr><td>Arabella Hotel Sedona</td><td>$130–180/nt</td><td>Red rock views, pool, walkable to Uptown. Solid 4-star.</td><td><a href="https://www.marriott.com" target="_blank">marriott.com</a></td></tr>
+        <tr><td>Sedona Real Inn & Suites</td><td>$100–140/nt</td><td>Comfortable, budget-friendly, great central location.</td><td><a href="https://www.hotels.com" target="_blank">hotels.com</a></td></tr>
+        <tr><td>Matterhorn Inn</td><td>$110–150/nt</td><td>Small boutique, amazing canyon views, quiet and charming.</td><td><a href="https://www.booking.com" target="_blank">booking.com</a></td></tr>
+      </tbody>
+    </table>
+    <p><a href="https://maps.google.com/?q=34.8697,-111.7610" target="_blank">📍 Sedona Hotels → Google Maps</a></p>
+
+    <div class="section-header"><h3>🎯 Light Day Activities</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Option A</div>
+        <h4>Airport Mesa Vortex + Uptown Walk</h4>
+        <p>Most accessible vortex. 20-min walk to the top with 360° views. Then walk Uptown Sedona for coffee, galleries, and gear.</p>
+        <div class="option-stops"><strong>Route:</strong> Airport Mesa Loop → Uptown Sedona → dinner</div>
+        <div class="option-stops"><strong>Hike:</strong> Airport Mesa loop (3.5 mi)</div>
+        <div class="option-why">Low commitment, high payoff. Airport Mesa at sunrise is spectacular.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=Airport+Mesa+Loop+Trail+Sedona+AZ" target="_blank">Airport Mesa</a></div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option B</div>
+        <h4>Chapel of Holy Cross</h4>
+        <p>Built into the red rock cliffs — a stunning architectural achievement. Then Tlaquepaque arts village for galleries.</p>
+        <div class="option-stops"><strong>Walk:</strong> 0.2 mi to chapel from parking. Free admission.</div>
+        <div class="option-why">Zero physical effort. The chapel views are stunning and completely free.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=Chapel+of+the+Holy+Cross+Sedona+AZ" target="_blank">Chapel of Holy Cross</a></div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🍽️ Sedona Dinner Picks</h3><div class="section-rule"></div></div>
+    <div class="three-col">
+      <div class="option-card">
+        <h4>Elote Café</h4>
+        <p>Creative Mexican, chef Kent Rathbun. Often a wait — arrive at opening (5 PM). Worth it.</p>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=34.8648,-111.7684" target="_blank">Maps</a></div>
+      </div>
+      <div class="option-card">
+        <h4>Mariposa Latin Grill</h4>
+        <p>Best sunset views in Sedona, upscale Latin cuisine, excellent cocktails. Splurge-worthy.</p>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=34.8706,-111.7899" target="_blank">Maps</a></div>
+      </div>
+      <div class="option-card">
+        <h4>Coffeepot Restaurant</h4>
+        <p>Legendary Sedona breakfast — 101 omelets on the menu. Arrive early for no wait.</p>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=34.8750,-111.7906" target="_blank">Maps</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 6 — Edge of the World                                            -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAY 6</strong> · Edge of the World (East Pocket), AZ</span></div>
+  <div class="day-banner">
+    <img src="images/10.jpg" alt="Mogollon Rim">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 6 · Apr 25</div>
+      <div class="day-title-block">
+        <div class="day-date">April 25 · 26-mile forest road to cliff edge · FR 231</div>
+        <div class="day-title">Edge of the World</div>
+        <div class="day-subtitle">Drive into Coconino National Forest and emerge on a cliff 2,000 feet above Sedona's red rock wilderness — camp where the land ends</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="images/sedona-edge.png" alt="Day 6 — Sedona to Edge of the World" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/34.8697%2C-111.7610/34.9799%2C-111.7943" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🔴 High Adventure</span>
+      East Pocket is one of the most cinematic camping experiences in Arizona. You drive 26 miles of forest service roads through ponderosa pines, and then the trees break — and Sedona's entire red rock wilderness is below you, 2,000 feet down. <strong>Arrive by 2 PM</strong> to snag a rim site. Your Land Cruiser was built for exactly this.
+    </div>
+
+    <div class="warning"><strong>⚠️ Critical:</strong> FR 231 becomes impassable in wet conditions — sticky red clay turns to ice. Check weather the morning of Apr 25. If rain is forecast, stay in Sedona or Flagstaff and try another day.</div>
+
+    <div class="section-header"><h3>🗺️ Getting There — Step by Step</h3><div class="section-rule"></div></div>
+    <div class="camp-info-box">
+      <strong>Access via Woody Mountain Road (Forest Road 231) from Flagstaff:</strong><br>
+      1. From Sedona take AZ-89A north to Flagstaff (45 min)<br>
+      2. In Flagstaff, head west on I-40 to Flagstaff Ranch Road exit<br>
+      3. Turn south onto Kiltie Lane → Woody Mountain Road (FR 231)<br>
+      4. Drive FR 231 south for ~26 miles — <strong>stay on the main road, ignore all offshoots</strong><br>
+      5. When trees break on the <strong>RIGHT</strong> with a cliff view → you've found Edge of the World<br>
+      <strong>GPS: 34.979889, -111.794281</strong> · Drive time from pavement: ~1.5 hours<br>
+      <a href="https://maps.google.com/?q=34.979889,-111.794281" target="_blank">📍 Edge of the World → Google Maps</a>
+    </div>
+
+    <div class="gpx-box">
+      <span class="gpx-icon">🗺️</span>
+      <div>
+        <span class="gpx-label">GPX Track Included</span>
+        <span class="gpx-name"><a href="https://www.google.com/maps/dir/34.8697%2C-111.7610/34.9799%2C-111.7943" target="_blank" style="color:var(--ember);text-decoration:none;">Edge_of_World.gpx → Open Route in Maps</a></span>
+        <div class="gpx-note">Full FR 231 route track + waypoints: rim camp, Jenga Rocks, FR 231/535 intersection camp for larger rigs</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Camp Strategy</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View (fill early)</span>
+        <div class="camp-cell">
+          <strong>Rim Sites at East Pocket</strong>
+          Camp literally on the cliff edge. 3–5 sites total. Monument Valley visible south, Sedona red rocks below.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=34.979889,-111.794281" target="_blank">34.9799, -111.7943</a></span>
+          <span class="price">Free · First-come · Fill by early afternoon</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Wind-Protected</span>
+        <div class="camp-cell">
+          <strong>Forest Sites (200 yds back)</strong>
+          Ponderosa pines block wind completely. Still beautiful views through trees. Far more sites available.
+          <span class="price">Free · Always available · Recommended if windy</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Larger Rigs</span>
+        <div class="camp-cell">
+          <strong>FR 231/535 Intersection Area</strong>
+          Earlier in the drive — flatter, wider clearings for trailers. Still gorgeous forest.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=35.1000,-111.7800" target="_blank">35.1000, -111.7800</a></span>
+          <span class="price">Free · Best option for rigs with trailers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hikes-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="hike-card">
+        <h4>🌄 East Pocket Rim Walk</h4>
+        <div class="hike-meta">1–4+ mi · as long as you want · unmarked</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Wander the cliff edge — Sedona red rocks 2,000 ft below, pine forest behind</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">You may be completely alone on April weekdays</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Jenga Rock (stacked boulders) is worth hunting — unmarked, stunning</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Pure magic. Your private overlook.</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🗼 East Pocket Fire Lookout</h4>
+        <div class="hike-meta">2 mi RT to tower · moderate · FR 2312</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Old fire lookout tower, sometimes staffed. Rangers will invite you up.</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Extremely low — almost nobody knows it's there</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">If staffed, rangers will let you climb up and explain fire detection</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Bonus adventure</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 Golden Hour — The Rim Itself</div>
+      <dl>
+        <dt>Where</dt><dd>Stand on the cliff edge 20 minutes before sunset. Face south toward Sedona.</dd>
+        <dt>Why It Matters</dt><dd>From 5,700 feet above the canyon floor, the light layers work like a landscape painting. You're looking DOWN on Cathedral Rock.</dd>
+        <dt>Worth It?</dt><dd>You're already there. This is why you drove 26 miles of dirt. Zero crowds. This will be the image from the trip.</dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">High rim wind</span><span class="decision-arrow">→</span><span class="decision-action">Move camp 200 yards into the pines — fully protected, equally beautiful</span></div>
+        <div class="decision-row"><span class="decision-icon">🌧️</span><span class="decision-trigger">Rain starts</span><span class="decision-arrow">→</span><span class="decision-action">Leave immediately — FR 231 clay becomes impassable in minutes</span></div>
+        <div class="decision-row"><span class="decision-icon">🌑</span><span class="decision-trigger">Clear night</span><span class="decision-arrow">→</span><span class="decision-action">Zero light pollution at elevation — best dark sky on the whole trip</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li>Fill up in Flagstaff before FR 231 (Costco on E Butler is cheapest)</li>
+          <li>No fuel on FR 231 — need at least 50 miles of reserve</li>
+          <li>Round trip from pavement: ~55 miles off-road</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Push deeper:</strong> FR 2312 to the lookout tower — rocky, narrow, fun. Rim scouting along cliff edge tracks.</div>
+      <div class="lc-avoid"><strong>Avoid:</strong> Any FR road during or after rain — the clay is literally slicker than ice even at low speed.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAYS 7–9 — Grand Canyon                                              -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAYS 7–9</strong> · Grand Canyon — Desert View CG #24</span></div>
+  <div class="day-banner">
+    <img src="images/11.jpg" alt="Grand Canyon">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Days 7–9 · Apr 26–28</div>
+      <div class="day-title-block">
+        <div class="day-date">April 26–28 · 3 Days · Desert View Campground Site #24</div>
+        <div class="day-title">Grand Canyon</div>
+        <div class="day-subtitle">The one that resets your understanding of scale. Three days means below-rim hiking, East Rim solitude, and both sunrise and sunset</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NDAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgNzQwIDI2MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im1hcGJnZGF5czc5Z3IiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0VFRUFFMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEUwRDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFya2VyIGlkPSJhcnJkYXlzNzlnciIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iNSIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPgogICAgICA8cGF0aCBkPSJNMCwwIEwwLDcgTDcsMy41IHoiIGZpbGw9IiM3RDNDOTgiLz4KICAgIDwvbWFya2VyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNtYXBiZ2RheXM3OWdyKSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iNTIiIHgyPSI3NDAiIHkyPSI1MiIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSIwIiB5MT0iMTA0IiB4Mj0iNzQwIiB5Mj0iMTA0IiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjAiIHkxPSIxNTYiIHgyPSI3NDAiIHkyPSIxNTYiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMCIgeTE9IjIwOCIgeDI9Ijc0MCIgeTI9IjIwOCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxsaW5lIHgxPSIxMDUiIHkxPSIwIiB4Mj0iMTA1IiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjAiIHgyPSIyMTEiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMzE3IiB5MT0iMCIgeDI9IjMxNyIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSI0MjIiIHkxPSIwIiB4Mj0iNDIyIiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjUyOCIgeTE9IjAiIHgyPSI1MjgiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iNjM0IiB5MT0iMCIgeDI9IjYzNCIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjUyOS40LDIwMi4zIDIzMi44LDY2LjAgMjEwLjYsNjUuMiA0NDEuNCw1Ny43IDQ5OC4yLDY3LjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjE4KSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MjkuNCwyMDIuMyAyMzIuOCw2Ni4wIDIxMC42LDY1LjIgNDQxLjQsNTcuNyA0OTguMiw2Ny40IiBmaWxsPSJub25lIiBzdHJva2U9IiM3RDNDOTgiIHN0cm9rZS13aWR0aD0iMy41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIG1hcmtlci1lbmQ9InVybCgjYXJyZGF5czc5Z3IpIi8+CiAgPGNpcmNsZSBjeD0iNTI5LjQiIGN5PSIyMDIuMyIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI1MjkuNCIgY3k9IjIwMi4zIiByPSI3IiBmaWxsPSIjRTY3RTIyIi8+CjxjaXJjbGUgY3g9IjIzMi44IiBjeT0iNjYuMCIgcj0iNy41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIyMzIuOCIgY3k9IjY2LjAiIHI9IjUiIGZpbGw9IiNDMDM5MkIiLz4KPGNpcmNsZSBjeD0iMjEwLjYiIGN5PSI2NS4yIiByPSI3LjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjIxMC42IiBjeT0iNjUuMiIgcj0iNSIgZmlsbD0iI0MwMzkyQiIvPgo8Y2lyY2xlIGN4PSI0NDEuNCIgY3k9IjU3LjciIHI9IjcuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDQxLjQiIGN5PSI1Ny43IiByPSI1IiBmaWxsPSIjQzAzOTJCIi8+CjxjaXJjbGUgY3g9IjQ5OC4yIiBjeT0iNjcuNCIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI0OTguMiIgY3k9IjY3LjQiIHI9IjciIGZpbGw9IiMyRDUwMTYiLz4KCiAgPHRleHQgeD0iNTI5LjQiIHk9IjE4OS4zIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5FZGdlIG9mIHRoZSBXb3JsZDwvdGV4dD4KPHRleHQgeD0iMjMyLjgiIHk9Ijg2LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjkuNSIgZmlsbD0iIzFBMUEyRSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+U291dGggS2FpYmFiIFRIPC90ZXh0Pgo8dGV4dCB4PSIyMTAuNiIgeT0iNTIuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0ibm9ybWFsIj5NYXRoZXIgUG9pbnQ8L3RleHQ+Cjx0ZXh0IHg9IjQ0MS40IiB5PSI3Ny43IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkxpcGFuIFBvaW50PC90ZXh0Pgo8dGV4dCB4PSI0OTguMiIgeT0iNTQuNDAwMDAwMDAwMDAwMDA2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5EZXNlcnQgVmlldyBDRyDwn4+VPC90ZXh0PgoKICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI0IiBmaWxsPSIjMUExQTJFIiBvcGFjaXR5PSIwLjkiLz4KICA8dGV4dCB4PSIxMCIgeT0iMTYiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRThENUI3Ij5EYXlzIDfigJM5IOKAlCBHcmFuZCBDYW55b248L3RleHQ+CiAgPHJlY3QgeD0iNTg2IiB5PSIzIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE4IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMykiIHJ4PSIyIi8+CiAgPGNpcmNsZSBjeD0iNTk4IiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNFNjdFMjIiLz4KICA8dGV4dCB4PSI2MDUiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5TdGFydDwvdGV4dD4KICA8Y2lyY2xlIGN4PSI2MzQiIGN5PSIxMiIgcj0iNCIgZmlsbD0iI0MwMzkyQiIvPgogIDx0ZXh0IHg9IjY0MSIgeT0iMTYiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjgiIGZpbGw9IiNFOEQ1QjciPlN0b3A8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjcyIiBjeT0iMTIiIHI9IjQiIGZpbGw9IiMyRDUwMTYiLz4KICA8dGV4dCB4PSI2NzkiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5DYW1wL0hvdGVsPC90ZXh0Pgo8L3N2Zz4=" alt="Days 7–9 — Grand Canyon" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/34.9799%2C-111.7943/36.0533%2C-112.0836/36.0599%2C-112.1074/36.1188%2C-111.8804/36.0425%2C-111.8248" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="camp-info-box">
+      <strong>🏕 Desert View Campground — Site #24 (Reserved)</strong><br>
+      25 miles east of Grand Canyon Village on Desert View Drive. Elevation 7,400 ft — pack layers, April nights drop to 30°F. Flush toilets, water, no hookups. Quieter than Mather CG, darker skies, closer to East Rim viewpoints.
+      <br><a href="https://maps.google.com/?q=36.0425,-111.8248" target="_blank">📍 Google Maps → Desert View CG</a> &nbsp;|&nbsp; <a href="https://www.recreation.gov" target="_blank">📋 Recreation.gov Reservation</a>
+    </div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🔴 High Reward</span>
+      Most visitors do the Grand Canyon in 4 hours. You have 3 days. That means below-rim hiking, the uncrowded Desert View Drive to the east, watching the Colorado River glint 4,000 feet below at sunrise, and actually sitting still long enough to feel the scale. Desert View is 25 miles from the tourist crush — quieter, darker skies, and you can reach spots the tour buses don't.
+    </div>
+
+    <div class="photo-strip two">
+      <div class="photo-item tall">
+        <img src="images/12.jpg" alt="South Kaibab Trail">
+        <div class="photo-caption">South Kaibab Trail — Cedar Ridge 1.5 mi below the rim</div>
+      </div>
+      <div class="photo-item tall">
+        <img src="images/13.jpg" alt="Desert View Watchtower">
+        <div class="photo-caption">Desert View Watchtower — your camp's front yard</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Three-Day Plan</h3><div class="section-rule"></div></div>
+
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-label">Day 1 — Apr 26 · Arrival</div>
+        <h4>Desert View + East Rim Walk</h4>
+        <p>Check in, then walk east of the Watchtower — almost no one goes this direction. You'll feel like you have the canyon to yourself.</p>
+        <div class="option-stops"><strong>Route:</strong> Desert View Watchtower → East Rim walk → Navajo Point (1 mi east)</div>
+        <div class="option-stops"><strong>Walk:</strong> East Rim 2 mi one-way (go as far as you want)</div>
+        <div class="option-why">Navajo Point is the highest elevation on South Rim. Views of the Colorado River bend. Almost no one is here.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=36.0425,-111.8248" target="_blank">Desert View Watchtower</a></div>
+      </div>
+      <div class="option-card recommended">
+        <div class="option-label">★ Day 2 — Apr 27 · Below Rim</div>
+        <h4>South Kaibab to Cedar Ridge</h4>
+        <p>The only way to truly feel the canyon is to go IN. South Kaibab has no shade or water but the views are vastly better than Bright Angel.</p>
+        <div class="option-stops"><strong>Route:</strong> South Kaibab Trailhead → Cedar Ridge (1.5 mi down) → Ooh Aah Point (0.9 mi)</div>
+        <div class="option-stops"><strong>Hike:</strong> 3.0 mi RT · 1,140 ft elevation · ~2 hrs</div>
+        <div class="option-why">Cedar Ridge is the sweet spot — open canyon views, genuine below-rim experience, reasonable effort. Best lunch spot in the Southwest.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=South+Kaibab+Trailhead+Grand+Canyon+AZ" target="_blank">South Kaibab Trailhead</a></div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Day 3 — Apr 28 · Sunrise + Village</div>
+        <h4>Mather Point Sunrise + Rim Trail</h4>
+        <p>Wake at 5 AM for the most iconic sunrise in America. Then walk the Rim Trail west — paved, spectacular, connects all the famous viewpoints.</p>
+        <div class="option-stops"><strong>Route:</strong> Mather Point (5 AM) → Rim Trail to Yavapai Museum → Bright Angel overlook → return</div>
+        <div class="option-stops"><strong>Walk:</strong> Rim Trail section 1.5 mi · easy</div>
+        <div class="option-why">The Geology Museum explains what you've been staring at for 3 days. Worth an hour.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=36.0599,-112.1074" target="_blank">Mather Point</a><a class="map-link" href="https://maps.google.com/?q=36.0577,-112.1186" target="_blank">Yavapai Museum</a></div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🥾 Hikes in Detail</h3><div class="section-rule"></div></div>
+    <div class="hikes-grid">
+      <div class="hike-card">
+        <h4>⬇️ South Kaibab → Cedar Ridge</h4>
+        <div class="hike-meta">3.0 mi RT · 1,140 ft · ~2 hrs · no water on trail</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Best open canyon views in the park — Colorado River visible, no trees blocking the abyss</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Moderate in April. Go early for solitude. Busy 9 AM–2 PM.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Cedar Ridge is a broad flat platform 1.5 mi below the rim. Best lunch spot in the Southwest.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> THE Grand Canyon hike. Non-negotiable.</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🚶 East Rim Walk (from Desert View)</h4>
+        <div class="hike-meta">2–4 mi one-way · easy · your secret advantage</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Uncrowded rim walking with Colorado River visible far below</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Very low — Desert View sees far fewer visitors than the Village</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">You will have entire sections completely to yourself. Canyon is as grand as anywhere.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Your secret advantage</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>⛏️ Grandview Trail → Coconino Saddle</h4>
+        <div class="hike-meta">2.4 mi RT · ~1,100 ft · ~2 hrs</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Steep historic 1892 mining trail with no crowds and spectacular canyon views</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Very low — one of the least-used maintained trails on the South Rim</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Built by Pete Berry in 1892 for his copper mine. Historical ruins at the end.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Uncrowded canyon experience</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Dispersed Camp Alternatives</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View Alternative</span>
+        <div class="camp-cell">
+          <strong>Kaibab NF Dispersed (Hwy 64 corridor)</strong>
+          Cinema-quality ponderosa forest camping north of the entrance.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.0800,-112.1000" target="_blank">Off Hwy 64 north</a></span>
+          <span class="price">Free · High clearance preferred</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Protected Option</span>
+        <div class="camp-cell">
+          <strong>Hull Cabin Area (FR 302)</strong>
+          East of Grand Canyon entrance. Forest shelter from canyon winds.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=35.97,-111.97" target="_blank">35.97, -111.97</a></span>
+          <span class="price">Free · Good for larger rigs</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Last Resort</span>
+        <div class="camp-cell">
+          <strong>Valle AZ Area</strong>
+          45 min south on Hwy 64. Flat plains, not spectacular but available.
+          <span class="price">Free · Easy access · Reserve nothing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 Golden Hour — Mather Point or Lipan Point</div>
+      <dl>
+        <dt>Where</dt><dd>Mather Point (crowded but iconic) or <strong>Lipan Point</strong> (from your camp direction — same light, far fewer people)</dd>
+        <dt>Why It Matters</dt><dd>The canyon walls go from cream to gold to orange to blood-red in under 20 minutes. Nothing in photography class prepares you for this.</dd>
+        <dt>Worth It?</dt><dd>Unambiguously yes. Lipan Point at your camp end is nearly empty at sunset and equally spectacular. <a href="https://maps.google.com/?q=36.1188,-111.8804" target="_blank">→ Lipan Point Maps</a></dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">High winds on rim</span><span class="decision-arrow">→</span><span class="decision-action">Descend South Kaibab — below-rim air is calm. Add a wind layer.</span></div>
+        <div class="decision-row"><span class="decision-icon">❄️</span><span class="decision-trigger">Below freezing night</span><span class="decision-arrow">→</span><span class="decision-action">Desert View at 7,400 ft — 20°F bag minimum in April</span></div>
+        <div class="decision-row"><span class="decision-icon">👥</span><span class="decision-trigger">Mather Point packed</span><span class="decision-arrow">→</span><span class="decision-action">Drive to Lipan Point (east) — same views, rarely crowded</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li>Fill at Cameron AZ Trading Post on Hwy 89 — last before Page</li>
+          <li>Grand Canyon Village has fuel but $0.60–0.80/gal premium</li>
+          <li>Desert View area: no fuel — top off at the village if low</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 10 + 11 — Horseshoe Bend / Page / Antelope Canyon               -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAYS 10–11</strong> · Horseshoe Bend · Page · Antelope Canyon</span></div>
+  <div class="day-banner">
+    <img src="images/14.jpg" alt="Horseshoe Bend">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Days 10–11 · Apr 29–30</div>
+      <div class="day-title-block">
+        <div class="day-date">April 29 — Horseshoe Bend + Hotel · April 30 — Antelope Canyon + BLM Camp</div>
+        <div class="day-title">Page, Arizona</div>
+        <div class="day-subtitle">The most photogenic 0.6-mile walk in America, then walk inside the earth where light becomes liquid</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NDAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgNzQwIDI2MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im1hcGJnZGF5MTBob3IiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0VFRUFFMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEUwRDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFya2VyIGlkPSJhcnJkYXkxMGhvciIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iNSIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPgogICAgICA8cGF0aCBkPSJNMCwwIEwwLDcgTDcsMy41IHoiIGZpbGw9IiMyNDcxQTMiLz4KICAgIDwvbWFya2VyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNtYXBiZ2RheTEwaG9yKSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iNTIiIHgyPSI3NDAiIHkyPSI1MiIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSIwIiB5MT0iMTA0IiB4Mj0iNzQwIiB5Mj0iMTA0IiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjAiIHkxPSIxNTYiIHgyPSI3NDAiIHkyPSIxNTYiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMCIgeTE9IjIwOCIgeDI9Ijc0MCIgeTI9IjIwOCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxsaW5lIHgxPSIxMDUiIHkxPSIwIiB4Mj0iMTA1IiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjAiIHgyPSIyMTEiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMzE3IiB5MT0iMCIgeDI9IjMxNyIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSI0MjIiIHkxPSIwIiB4Mj0iNDIyIiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjUyOCIgeTE9IjAiIHgyPSI1MjgiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iNjM0IiB5MT0iMCIgeDI9IjYzNCIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjE3NC43LDIwMi4zIDUwOC4wLDYzLjggNTY1LjMsNTcuNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDAsMCwwLDAuMTgpIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjE3NC43LDIwMi4zIDUwOC4wLDYzLjggNTY1LjMsNTcuNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjQ3MUEzIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBtYXJrZXItZW5kPSJ1cmwoI2FycmRheTEwaG9yKSIvPgogIDxjaXJjbGUgY3g9IjE3NC43IiBjeT0iMjAyLjMiIHI9IjkuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTc0LjciIGN5PSIyMDIuMyIgcj0iNyIgZmlsbD0iI0U2N0UyMiIvPgo8Y2lyY2xlIGN4PSI1MDguMCIgY3k9IjYzLjgiIHI9IjcuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNTA4LjAiIGN5PSI2My44IiByPSI1IiBmaWxsPSIjQzAzOTJCIi8+CjxjaXJjbGUgY3g9IjU2NS4zIiBjeT0iNTcuNyIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI1NjUuMyIgY3k9IjU3LjciIHI9IjciIGZpbGw9IiMyRDUwMTYiLz4KCiAgPHRleHQgeD0iMTc0LjciIHk9IjE4OS4zIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5EZXNlcnQgVmlldyBDRzwvdGV4dD4KPHRleHQgeD0iNTA4LjAiIHk9IjgzLjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjkuNSIgZmlsbD0iIzFBMUEyRSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+SG9yc2VzaG9lIEJlbmQ8L3RleHQ+Cjx0ZXh0IHg9IjU2NS4zIiB5PSI0NC43IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5QYWdlIEhvdGVsIPCfj6g8L3RleHQ+CgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI3NDAiIGhlaWdodD0iMjQiIGZpbGw9IiMxQTFBMkUiIG9wYWNpdHk9IjAuOSIvPgogIDx0ZXh0IHg9IjEwIiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNFOEQ1QjciPkRheSAxMCDigJQgSG9yc2VzaG9lIEJlbmQgKyBQYWdlPC90ZXh0PgogIDxyZWN0IHg9IjU4NiIgeT0iMyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiYSgwLDAsMCwwLjMpIiByeD0iMiIvPgogIDxjaXJjbGUgY3g9IjU5OCIgY3k9IjEyIiByPSI0IiBmaWxsPSIjRTY3RTIyIi8+CiAgPHRleHQgeD0iNjA1IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+U3RhcnQ8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjM0IiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNDMDM5MkIiLz4KICA8dGV4dCB4PSI2NDEiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5TdG9wPC90ZXh0PgogIDxjaXJjbGUgY3g9IjY3MiIgY3k9IjEyIiByPSI0IiBmaWxsPSIjMkQ1MDE2Ii8+CiAgPHRleHQgeD0iNjc5IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+Q2FtcC9Ib3RlbDwvdGV4dD4KPC9zdmc+" alt="Day 10 — Horseshoe Bend + Page" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/36.0425%2C-111.8248/36.8842%2C-111.5094/36.9157%2C-111.4559" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+
+    <div class="section-header"><h3>📅 April 29 — Horseshoe Bend + Hotel Night</h3><div class="section-rule"></div></div>
+    <div class="feel-box">
+      <span class="energy-badge">🟡 Medium Energy</span>
+      Horseshoe Bend is a 270° Colorado River bend seen from 1,000 feet above — an image so perfect it looks AI-generated. The walk is 1.5 miles, takes 30 minutes, and costs $10 to park. Afternoon light is perfect. Then a hotel bed before tomorrow's Antelope Canyon.
+    </div>
+
+    <div class="camp-info-box">
+      <strong>🔵 Horseshoe Bend:</strong> 1.5 mi RT · 180 ft elevation · paved to overlook · $10/vehicle parking · No reservation needed<br>
+      <strong>⚠️ Warning:</strong> No railings at the edge — every year people fall. Keep well back from the rim.<br>
+      <strong>Best light:</strong> Afternoon 2–4 PM or sunrise (spectacular, nearly empty)<br>
+      <a href="https://maps.google.com/?q=Horseshoe+Bend+Trailhead+Page+AZ" target="_blank">📍 Horseshoe Bend Trailhead → Google Maps</a>
+    </div>
+
+    <table class="hotel-table">
+      <thead><tr><th>Page Hotel</th><th>Est. Rate</th><th>Why Choose It</th><th>Book</th></tr></thead>
+      <tbody>
+        <tr><td>Courtyard by Marriott Page/Lake Powell</td><td>$100–140/nt</td><td>Best in Page — pool, clean, great breakfast. Book early.</td><td><a href="https://www.marriott.com" target="_blank">marriott.com</a></td></tr>
+        <tr><td>Holiday Inn Express Page</td><td>$90–120/nt</td><td>Reliable, pool, free breakfast, near Antelope Canyon turnoff.</td><td><a href="https://www.ihg.com" target="_blank">ihg.com</a></td></tr>
+        <tr><td>Hyatt Place Page/Lake Powell</td><td>$110–150/nt</td><td>Newest hotel in Page. Modern, comfortable rooms.</td><td><a href="https://www.hyatt.com" target="_blank">hyatt.com</a></td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-header"><h3>📅 April 30 — Antelope Slot Canyon</h3><div class="section-rule"></div></div>
+    <div class="feel-box">
+      <span class="energy-badge">🟡 Guided Tour Day</span>
+      Antelope Canyon is the most otherworldly landscape on this trip — sandstone walls undulating in curves of orange, red, and purple, with shafts of light cutting through. Guided tours are <strong>required</strong> and sell out 2–4 weeks in advance. Book tonight if you haven't already.
+    </div>
+
+    <div class="photo-strip two">
+      <div class="photo-item tall">
+        <img src="images/15.jpg" alt="Upper Antelope Canyon">
+        <div class="photo-caption">Upper Antelope Canyon — famous light beams (midday, summer)</div>
+      </div>
+      <div class="photo-item tall">
+        <img src="images/16.jpg" alt="Lower Antelope Canyon">
+        <div class="photo-caption">Lower Antelope Canyon — more intimate, beautiful light all day</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏛️ Best Tour Recommendation</h3><div class="section-rule"></div></div>
+    <div class="feel-box" style="border-left-color: var(--ember);">
+      <strong>🏆 Our Pick: Lower Antelope Canyon</strong> — Less crowded, more intimate, beautiful light all day (not just midday). The ladder climbing adds adventure. 20% less expensive than Upper. Ken's Tours (lowerantelope.com) or Dixie's (antelopelowercanyon.com) are the highest-rated operators.<br><br>
+      <strong>If you want the light beams:</strong> Book Upper Antelope Canyon at 11 AM–1 PM with <a href="https://antelopecanyon.com" target="_blank">Antelope Canyon Tours Inc.</a> — but book now. Light beams are spring/summer only.
+    </div>
+
+    <table class="tour-table">
+      <thead><tr><th>Tour Company</th><th>Canyon</th><th>Duration</th><th>Price/Person</th><th>Book At</th></tr></thead>
+      <tbody>
+        <tr><td>Ken's Tours</td><td>Lower</td><td>~1 hr</td><td>~$40</td><td><a href="https://lowerantelope.com" target="_blank">lowerantelope.com</a></td></tr>
+        <tr><td>Dixie Ellis Tours</td><td>Lower</td><td>~1 hr</td><td>~$45</td><td><a href="https://antelopelowercanyon.com" target="_blank">antelopelowercanyon.com</a></td></tr>
+        <tr><td>Antelope Canyon Tours Inc.</td><td>Upper</td><td>~1.5 hr</td><td>~$75</td><td><a href="https://antelopecanyon.com" target="_blank">antelopecanyon.com</a></td></tr>
+        <tr><td>Antelope Canyon.az (combo)</td><td>Upper+Lower</td><td>~3 hrs</td><td>~$140</td><td><a href="https://antelopecanyon.az" target="_blank">antelopecanyon.az</a></td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-header"><h3>🏕️ BLM Dispersed Camp — Lone Rock Beach</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View (★ Recommended)</span>
+        <div class="camp-cell">
+          <strong>Lone Rock Beach (Glen Canyon NRA)</strong>
+          Camp on the shore of Lake Powell. Massive sandstone monolith glows at sunset. Turquoise water + red rock = extraordinary.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.9455,-111.4831" target="_blank">36.9455, -111.4831</a></span>
+          <span class="price">$12/night · No reservation needed</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Wind-Protected</span>
+        <div class="camp-cell">
+          <strong>Wahweap BLM Dispersed</strong>
+          Sheltered by sandstone hills. Free. High clearance preferred.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.9900,-111.4900" target="_blank">36.9900, -111.4900</a></span>
+          <span class="price">Free · Use if Lake Powell is windy</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Easy Backup</span>
+        <div class="camp-cell">
+          <strong>Hwy 89 North BLM</strong>
+          Past Walmart, left on dirt road. Flat, easy, free, views toward Glen Canyon.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=36.94,-111.42" target="_blank">36.94, -111.42</a></span>
+          <span class="price">Free · Easy access</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">👥</span><span class="decision-trigger">Antelope tour full</span><span class="decision-arrow">→</span><span class="decision-action">Canyon X often has availability — try antelopecanyon.az</span></div>
+        <div class="decision-row"><span class="decision-icon">📷</span><span class="decision-trigger">Photography goals</span><span class="decision-arrow">→</span><span class="decision-action">Lower Canyon at 9 AM or Upper at 11 AM for light beams. No tripods without $100+ photo tour.</span></div>
+        <div class="decision-row"><span class="decision-icon">🌊</span><span class="decision-trigger">Wind on Lake Powell</span><span class="decision-arrow">→</span><span class="decision-action">Move to Wahweap BLM hills — more protected</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy — CRITICAL</div>
+        <ul>
+          <li><strong>Fill completely in Page</strong> — Page → Muley Point via Mexican Hat is 100+ miles</li>
+          <li>Mexican Hat Lodge has fuel (limited hours) — call: (435) 683-2220</li>
+          <li>Bluff UT has a reliable gas station on Hwy 191</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 12 — Muley Point                                                 -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAY 12</strong> · Muley Point, Cedar Mesa, UT</span></div>
+  <div class="day-banner">
+    <img src="images/17.jpg" alt="Monument Valley">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 12 · May 1</div>
+      <div class="day-title-block">
+        <div class="day-date">May 1 · Drive up the Moki Dugway · BLM Dispersed</div>
+        <div class="day-title">Muley Point</div>
+        <div class="day-subtitle">Scale the most dramatic unpaved switchbacks in Utah to camp above Monument Valley, the Goosenecks, and Bears Ears</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NDAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgNzQwIDI2MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im1hcGJnZGF5MTFhbnQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0VFRUFFMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEUwRDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFya2VyIGlkPSJhcnJkYXkxMWFudCIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iNSIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPgogICAgICA8cGF0aCBkPSJNMCwwIEwwLDcgTDcsMy41IHoiIGZpbGw9IiNFNjdFMjIiLz4KICAgIDwvbWFya2VyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNtYXBiZ2RheTExYW50KSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iNTIiIHgyPSI3NDAiIHkyPSI1MiIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSIwIiB5MT0iMTA0IiB4Mj0iNzQwIiB5Mj0iMTA0IiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjAiIHkxPSIxNTYiIHgyPSI3NDAiIHkyPSIxNTYiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMCIgeTE9IjIwOCIgeDI9Ijc0MCIgeTI9IjIwOCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxsaW5lIHgxPSIxMDUiIHkxPSIwIiB4Mj0iMTA1IiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjAiIHgyPSIyMTEiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMzE3IiB5MT0iMCIgeDI9IjMxNyIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSI0MjIiIHkxPSIwIiB4Mj0iNDIyIiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjUyOCIgeTE9IjAiIHgyPSI1MjgiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iNjM0IiB5MT0iMCIgeDI9IjYzNCIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjMwMi40LDEyMC43IDUwNS4yLDE2Mi4zIDIzNC44LDk3LjciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjE4KSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIzMDIuNCwxMjAuNyA1MDUuMiwxNjIuMyAyMzQuOCw5Ny43IiBmaWxsPSJub25lIiBzdHJva2U9IiNFNjdFMjIiIHN0cm9rZS13aWR0aD0iMy41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIG1hcmtlci1lbmQ9InVybCgjYXJyZGF5MTFhbnQpIi8+CiAgPGNpcmNsZSBjeD0iMzAyLjQiIGN5PSIxMjAuNyIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIzMDIuNCIgY3k9IjEyMC43IiByPSI3IiBmaWxsPSIjRTY3RTIyIi8+CjxjaXJjbGUgY3g9IjUwNS4yIiBjeT0iMTYyLjMiIHI9IjcuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNTA1LjIiIGN5PSIxNjIuMyIgcj0iNSIgZmlsbD0iI0MwMzkyQiIvPgo8Y2lyY2xlIGN4PSIyMzQuOCIgY3k9Ijk3LjciIHI9IjkuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjM0LjgiIGN5PSI5Ny43IiByPSI3IiBmaWxsPSIjMkQ1MDE2Ii8+CgogIDx0ZXh0IHg9IjMwMi40IiB5PSIxMDcuNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0iYm9sZCI+UGFnZSBIb3RlbDwvdGV4dD4KPHRleHQgeD0iNTA1LjIiIHk9IjE4Mi4zIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkxvd2VyIEFudGVsb3BlIENhbnlv4oCmPC90ZXh0Pgo8dGV4dCB4PSIyMzQuOCIgeT0iODQuNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0iYm9sZCI+TG9uZSBSb2NrIEJlYWNoIPCfj5U8L3RleHQ+CgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI3NDAiIGhlaWdodD0iMjQiIGZpbGw9IiMxQTFBMkUiIG9wYWNpdHk9IjAuOSIvPgogIDx0ZXh0IHg9IjEwIiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNFOEQ1QjciPkRheSAxMSDigJQgQW50ZWxvcGUgQ2FueW9uICsgQkxNPC90ZXh0PgogIDxyZWN0IHg9IjU4NiIgeT0iMyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiYSgwLDAsMCwwLjMpIiByeD0iMiIvPgogIDxjaXJjbGUgY3g9IjU5OCIgY3k9IjEyIiByPSI0IiBmaWxsPSIjRTY3RTIyIi8+CiAgPHRleHQgeD0iNjA1IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+U3RhcnQ8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjM0IiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNDMDM5MkIiLz4KICA8dGV4dCB4PSI2NDEiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5TdG9wPC90ZXh0PgogIDxjaXJjbGUgY3g9IjY3MiIgY3k9IjEyIiByPSI0IiBmaWxsPSIjMkQ1MDE2Ii8+CiAgPHRleHQgeD0iNjc5IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+Q2FtcC9Ib3RlbDwvdGV4dD4KPC9zdmc+" alt="Day 11 — Antelope Canyon + BLM" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/36.9157%2C-111.4559/36.8617%2C-111.3743/36.9455%2C-111.4831" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🔴 Epic Day</span>
+      Muley Point may be the single greatest camping viewpoint in the American Southwest. From 5,715 feet on Cedar Mesa's edge, you see Monument Valley to the south, Goosenecks of the San Juan River directly below, Navajo Mountain to the west, and Bears Ears on the horizon. The drive up the Moki Dugway — 3 miles of 11% grade unpaved switchbacks with no guardrail — is equally magnificent. <strong>Arrive early for rim sites.</strong>
+    </div>
+
+    <div class="camp-info-box">
+      <strong>🗺️ Getting There from Page:</strong><br>
+      Page → US-160 west (or Hwy 89 north to 98) → Kayenta → US-163 north through Monument Valley → Mexican Hat → UT-261 north past Goosenecks → <strong>climb Moki Dugway</strong> (3 mi, 11% grade, 15 mph, no guardrail — take your time!) → at top, immediate LEFT on Muley Point Road → drive 5 miles to rim<br>
+      <strong>GPS: 37.4049, -109.9265</strong> (Muley Point viewpoint/camp) · Road to rim: good dirt, accessible to all vehicles in dry conditions<br>
+      <a href="https://maps.google.com/?q=37.4049,-109.9265" target="_blank">📍 Muley Point → Google Maps</a> &nbsp;|&nbsp; <a href="https://maps.google.com/?q=37.1748,-109.8696" target="_blank">📍 Moki Dugway Base</a>
+    </div>
+
+    <div class="photo-strip two">
+      <div class="photo-item">
+        <img src="images/18.jpg" alt="Goosenecks">
+        <div class="photo-caption">Goosenecks of the San Juan River — 800 ft below Muley Point</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/19.jpg" alt="Monument Valley">
+        <div class="photo-caption">Monument Valley from Muley Point — Mittens visible south</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Must-Visit En Route</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Don't Skip</div>
+        <h4>Goosenecks State Park</h4>
+        <p>Free state park, 5 min off route. An 800-foot overlook directly above the most dramatic entrenched meanders in North America. 300 million years of geology in one view.</p>
+        <div class="option-stops"><strong>Walk:</strong> None — just stand at the overlook. Free admission.</div>
+        <div class="option-why">One of the most geologically impressive 5-minute stops in the West. You're already driving past it.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=Goosenecks+State+Park+Utah" target="_blank">Goosenecks State Park</a></div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option — Add 1.5 hrs</div>
+        <h4>Monument Valley Scenic Loop</h4>
+        <p>If routing via Kayenta, the Monument Valley 17-mile scenic drive is the most iconic landscape in America. The Mittens at sunrise from Forrest Gump Hill on Hwy 163 are free.</p>
+        <div class="option-stops"><strong>Walk:</strong> John Ford's Point viewpoint (free from the road overlook)</div>
+        <div class="option-why">You're driving past it. The paid loop ($8/vehicle) is worth it if you've never been.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=Monument+Valley+Navajo+Tribal+Park" target="_blank">Monument Valley</a></div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Muley Point Camp Strategy</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Rim Sites (get there early)</span>
+        <div class="camp-cell">
+          <strong>Muley Point Rim</strong>
+          Monument Valley + Goosenecks view. 3–8 pull-offs along the rim. Fill by noon on weekends.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.4049,-109.9265" target="_blank">37.4049, -109.9265</a></span>
+          <span class="price">Free BLM · No reservations · No facilities</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Wind-Protected</span>
+        <div class="camp-cell">
+          <strong>Juniper/Cedar Clearings</strong>
+          Along Muley Point Road, sheltered by cedar trees. Still great views through canopy.
+          <span class="price">Free · More sites available · Recommended if west winds</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Epic Backup</span>
+        <div class="camp-cell">
+          <strong>Valley of the Gods BLM</strong>
+          10 mi west. 17-mile loop road through red monolith country. Dramatic in its own right.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.2800,-109.8900" target="_blank">37.2800, -109.8900</a></span>
+          <span class="price">Free · Few visitors · Sandy loop road</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hikes-grid" style="grid-template-columns:1fr;">
+      <div class="hike-card">
+        <h4>🌅 Muley Point Rim Walk</h4>
+        <div class="hike-meta">1–4 mi · as long as you want · unmarked · easy terrain</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Cedar Mesa edge above the Goosenecks — Monument Valley south, Bears Ears north, everything you've been driving toward</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">You may be the only people here. Muley Point is beautifully unknown.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">No marked trail — follow the cliff edge. Views change with every step. Complete 360° panorama.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Best 360° view on the entire trip</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 Golden Hour — Face Southwest Toward Monument Valley</div>
+      <dl>
+        <dt>Where</dt><dd>The rim itself at sunset — the Mittens go dark silhouette against an orange sky.</dd>
+        <dt>Why It Matters</dt><dd>Monument Valley from above and afar is completely different from inside it. You're at the same elevation as the mesa tops. The scale becomes comprehensible.</dd>
+        <dt>Worth It?</dt><dd>You're already there. This will be the image from the entire trip.</dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">West winds (common on Cedar Mesa)</span><span class="decision-arrow">→</span><span class="decision-action">Camp in junipers off the rim — still stellar views through trees</span></div>
+        <div class="decision-row"><span class="decision-icon">🌧️</span><span class="decision-trigger">Rain coming</span><span class="decision-arrow">→</span><span class="decision-action">Muley Point Road is clay — get out before rain or you're stuck overnight</span></div>
+        <div class="decision-row"><span class="decision-icon">📡</span><span class="decision-trigger">No cell service</span><span class="decision-arrow">→</span><span class="decision-action">Download offline maps in Page. OnX Offroad works best here.</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy</div>
+        <ul>
+          <li>Mexican Hat Lodge — call ahead: (435) 683-2220 (limited hours)</li>
+          <li>Bluff UT (15 mi away) — more reliable fuel stop on Hwy 191</li>
+          <li>Carry 2 extra gallons — no fuel on Cedar Mesa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Push deeper:</strong> Valley of the Gods 17-mile sandy loop — sedans avoid it. You get it alone. Also: BLM tracks off Muley Point Road toward the rim.</div>
+      <div class="lc-avoid"><strong>Avoid:</strong> Muley Point Road after rain — clay over slickrock = glass. Wait it out.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAY 13 — Kodachrome Basin                                            -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAY 13</strong> · Kodachrome Basin + Grand Staircase</span></div>
+  <div class="day-banner">
+    <img src="images/20.jpg" alt="Kodachrome Basin">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Day 13 · May 2</div>
+      <div class="day-title-block">
+        <div class="day-date">May 2 · Coords: 37.39931, -112.57921 · Grand Staircase BLM Dispersed</div>
+        <div class="day-title">Kodachrome Basin</div>
+        <div class="day-subtitle">67 stone spires, the largest double arch in America, and a 4x4 road through Butch Cassidy country</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NDAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgNzQwIDI2MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im1hcGJnZGF5MTJwYWciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0VFRUFFMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEUwRDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFya2VyIGlkPSJhcnJkYXkxMnBhZyIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iNSIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPgogICAgICA8cGF0aCBkPSJNMCwwIEwwLDcgTDcsMy41IHoiIGZpbGw9IiNEMzU0MDAiLz4KICAgIDwvbWFya2VyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNtYXBiZ2RheTEycGFnKSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iNTIiIHgyPSI3NDAiIHkyPSI1MiIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSIwIiB5MT0iMTA0IiB4Mj0iNzQwIiB5Mj0iMTA0IiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjAiIHkxPSIxNTYiIHgyPSI3NDAiIHkyPSIxNTYiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMCIgeTE9IjIwOCIgeDI9Ijc0MCIgeTI9IjIwOCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxsaW5lIHgxPSIxMDUiIHkxPSIwIiB4Mj0iMTA1IiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjAiIHgyPSIyMTEiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMzE3IiB5MT0iMCIgeDI9IjMxNyIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSI0MjIiIHkxPSIwIiB4Mj0iNDIyIiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjUyOCIgeTE9IjAiIHgyPSI1MjgiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iNjM0IiB5MT0iMCIgeDI9IjYzNCIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjY2LjEsMTk5LjcgNTg0LjUsMTg4LjIgNjU0LjMsMTMwLjYgNjczLjksMTMwLjEgNjUyLjQsNjAuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDAsMCwwLDAuMTgpIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjY2LjEsMTk5LjcgNTg0LjUsMTg4LjIgNjU0LjMsMTMwLjYgNjczLjksMTMwLjEgNjUyLjQsNjAuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDM1NDAwIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBtYXJrZXItZW5kPSJ1cmwoI2FycmRheTEycGFnKSIvPgogIDxjaXJjbGUgY3g9IjY2LjEiIGN5PSIxOTkuNyIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI2Ni4xIiBjeT0iMTk5LjciIHI9IjciIGZpbGw9IiNFNjdFMjIiLz4KPGNpcmNsZSBjeD0iNTg0LjUiIGN5PSIxODguMiIgcj0iNy41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI1ODQuNSIgY3k9IjE4OC4yIiByPSI1IiBmaWxsPSIjQzAzOTJCIi8+CjxjaXJjbGUgY3g9IjY1NC4zIiBjeT0iMTMwLjYiIHI9IjcuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNjU0LjMiIGN5PSIxMzAuNiIgcj0iNSIgZmlsbD0iI0MwMzkyQiIvPgo8Y2lyY2xlIGN4PSI2NzMuOSIgY3k9IjEzMC4xIiByPSI3LjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjY3My45IiBjeT0iMTMwLjEiIHI9IjUiIGZpbGw9IiNDMDM5MkIiLz4KPGNpcmNsZSBjeD0iNjUyLjQiIGN5PSI2MC4zIiByPSI5LjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjY1Mi40IiBjeT0iNjAuMyIgcj0iNyIgZmlsbD0iIzJENTAxNiIvPgoKICA8dGV4dCB4PSI3NS4xIiB5PSIyMDMuNyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5Mb25lIFJvY2sgQmVhY2g8L3RleHQ+Cjx0ZXh0IHg9IjU4NC41IiB5PSIyMDguMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0ibm9ybWFsIj5Nb251bWVudCBWYWxsZXk8L3RleHQ+Cjx0ZXh0IHg9IjY1NC4zIiB5PSIxMTcuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0ibm9ybWFsIj5Hb29zZW5lY2tzIFN0YXRlIFBhcuKApjwvdGV4dD4KPHRleHQgeD0iNjY0LjkiIHk9IjEzNC4xIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPk1va2kgRHVnd2F5PC90ZXh0Pgo8dGV4dCB4PSI2NTIuNCIgeT0iNDcuMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOS41IiBmaWxsPSIjMUExQTJFIiBmb250LXdlaWdodD0iYm9sZCI+TXVsZXkgUG9pbnQg8J+PlTwvdGV4dD4KCiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzFBMUEyRSIgb3BhY2l0eT0iMC45Ii8+CiAgPHRleHQgeD0iMTAiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4RDVCNyI+RGF5IDEyIOKAlCBQYWdlIHRvIE11bGV5IFBvaW50PC90ZXh0PgogIDxyZWN0IHg9IjU4NiIgeT0iMyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiYSgwLDAsMCwwLjMpIiByeD0iMiIvPgogIDxjaXJjbGUgY3g9IjU5OCIgY3k9IjEyIiByPSI0IiBmaWxsPSIjRTY3RTIyIi8+CiAgPHRleHQgeD0iNjA1IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+U3RhcnQ8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjM0IiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNDMDM5MkIiLz4KICA8dGV4dCB4PSI2NDEiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5TdG9wPC90ZXh0PgogIDxjaXJjbGUgY3g9IjY3MiIgY3k9IjEyIiByPSI0IiBmaWxsPSIjMkQ1MDE2Ii8+CiAgPHRleHQgeD0iNjc5IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+Q2FtcC9Ib3RlbDwvdGV4dD4KPC9zdmc+" alt="Day 12 — Page to Muley Point" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/36.9455%2C-111.4831/36.9835%2C-110.1068/37.1732%2C-109.9215/37.1748%2C-109.8696/37.4049%2C-109.9265" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="camp-info-box">
+      <strong>📍 Your Coordinates (37.39931, -112.57921)</strong> place you near <strong>Kodachrome Basin State Park</strong> and the adjacent Grand Staircase-Escalante National Monument — 1.9 million acres of wild plateau country. Kodachrome Basin has 67 stone "sedimentary pipes" found nowhere else on Earth. Grand Staircase BLM offers dispersed camping with complete solitude.
+      <br><a href="https://maps.google.com/?q=37.39931,-112.57921" target="_blank">📍 Your Coordinates → Google Maps</a>
+    </div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🟡 Medium Energy</span>
+      Kodachrome Basin is one of Utah's most underrated parks — 67 stone spires rising from a red desert floor, named for its Kodachrome slide-film colors. Then Grosvenor Arch is 12 miles on a dirt road and almost nobody goes there. The whole area rewards curiosity over the well-worn path.
+    </div>
+
+    <div class="section-header"><h3>🎯 Choose Your Day</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card recommended">
+        <div class="option-label">★ Option A — Accessible Icons</div>
+        <h4>Kodachrome Basin + Grosvenor Arch</h4>
+        <p>Two extraordinary sites easily reached. Kodachrome is a gem of a state park ($10/vehicle). Grosvenor Arch is 12 miles on Cottonwood Canyon Road — the largest double arch in the US and almost nobody visits it.</p>
+        <div class="option-stops"><strong>Route:</strong> Kodachrome Basin SP → Grand Parade Trail → Grosvenor Arch → camp</div>
+        <div class="option-stops"><strong>Hike:</strong> Grand Parade Trail (2 mi loop) past all 67 stone spires</div>
+        <div class="option-links">
+          <a class="map-link" href="https://maps.google.com/?q=Kodachrome+Basin+State+Park+Utah" target="_blank">Kodachrome Basin SP</a>
+          <a class="map-link" href="https://maps.google.com/?q=Grosvenor+Arch+Grand+Staircase+Utah" target="_blank">Grosvenor Arch</a>
+        </div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Option B — 4x4 Full Adventure</div>
+        <h4>Cottonwood Canyon Road Loop</h4>
+        <p>46 miles of dirt connecting Hwy 89 to Bryce Canyon — one of the most scenic drives in Utah. Butch Cassidy ran cattle through here. Your LC can run the whole road.</p>
+        <div class="option-stops"><strong>Route:</strong> Hwy 89 → Cottonwood Canyon Road → Round Valley Draw Narrows → Grosvenor Arch → Kodachrome → camp</div>
+        <div class="option-stops"><strong>Hike:</strong> Round Valley Draw Narrows: 2.5 mi RT (small slot canyon)</div>
+        <div class="option-why">4x4 required. Full adventure. The whole road is an experience.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=37.3500,-111.9800" target="_blank">Round Valley Draw</a></div>
+      </div>
+    </div>
+
+    <div class="hikes-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="hike-card">
+        <h4>🗿 Grand Parade Trail (Kodachrome)</h4>
+        <div class="hike-meta">2 mi loop · easy · ~1 hr · $10 park entry</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Walk past 67 sedimentary pipe formations found nowhere else on Earth</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Low — Kodachrome is a hidden gem even Utahans rarely visit</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Sedimentary pipes formed from pressurized sand/mud thrust upward — geologically unique worldwide</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Weird and wonderful</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🏛️ Grosvenor Arch</h4>
+        <div class="hike-meta">0.3 mi RT · 15 min · $0 · 12 mi on dirt road</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Largest double-span arch in the US — 152 ft and 99 ft spans standing alone in a mesa</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Near empty — 12 miles of dirt road filters out virtually everyone</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Named for National Geographic Society founder Gilbert Grosvenor. Zero fanfare, enormous scale.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> Extraordinary and unknown</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Grand Staircase BLM Dispersed Camping</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View</span>
+        <div class="camp-cell">
+          <strong>Cottonwood Canyon Road BLM</strong>
+          Open canyon views, red cliffs all around. Drive the road and pick a clearing.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.45,-111.88" target="_blank">37.45, -111.88</a></span>
+          <span class="price">Free · 14-day limit · No facilities</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Protected</span>
+        <div class="camp-cell">
+          <strong>Kodachrome Basin BLM Area</strong>
+          Pine-juniper forest south of state park. Sheltered clearings.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.50,-112.00" target="_blank">37.50, -112.00</a></span>
+          <span class="price">Free · Softer terrain</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Backup</span>
+        <div class="camp-cell">
+          <strong>Ponderosa BLM (toward Bryce)</strong>
+          Ponderosa pine canopy on the way to Bryce Canyon. On your route for tomorrow.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.58,-112.05" target="_blank">37.58, -112.05</a></span>
+          <span class="price">Free · Stage for tomorrow's drive</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">🌧️</span><span class="decision-trigger">Rain on Cottonwood Road</span><span class="decision-arrow">→</span><span class="decision-action">Cancel — impassable slick clay. Do Kodachrome Basin only (paved access)</span></div>
+        <div class="decision-row"><span class="decision-icon">⛽</span><span class="decision-trigger">Low fuel</span><span class="decision-arrow">→</span><span class="decision-action">Cannonville UT near Kodachrome (small), or Hatch UT on Hwy 89 (reliable)</span></div>
+        <div class="decision-row"><span class="decision-icon">🗺️</span><span class="decision-trigger">No cell signal</span><span class="decision-arrow">→</span><span class="decision-action">Download Grand Staircase offline maps in Kanab or Page before arriving</span></div>
+      </div>
+      <div class="lc-box">
+        <div class="lc-header">🚙 Land Cruiser Advantage</div>
+        <div class="lc-go"><strong>Push deeper:</strong> Cottonwood Canyon Road full loop — deeply rutted in places. BLM tracks off the main road reward exploration.</div>
+        <div class="lc-avoid"><strong>Absolutely never:</strong> Drive red clay dirt roads after rain in Grand Staircase — clay is slicker than ice and stains everything.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  DAYS 14–16 — Bryce Canyon                                            -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="day-page">
+  <div class="page-header-bar"><span>🏔 Southwest Overland · Apr 20 – May 5</span><span><strong>DAYS 14–16</strong> · Bryce Canyon NP — North CG Loop B #48</span></div>
+  <div class="day-banner">
+    <img src="images/21.jpg" alt="Bryce Canyon">
+    <div class="day-banner-overlay"></div>
+    <div class="day-banner-content">
+      <div class="day-number">Days 14–16 · May 3–5</div>
+      <div class="day-title-block">
+        <div class="day-date">May 3–5 · 3 Days · North Campground Loop B Site #48</div>
+        <div class="day-title">Bryce Canyon</div>
+        <div class="day-subtitle">Pink hoodoos, orange amphitheaters, 7,500 stars on a moonless night, and trails that drop into another world</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-body">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NDAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgNzQwIDI2MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im1hcGJnZGF5MTNtdWwiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0VFRUFFMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEUwRDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bWFya2VyIGlkPSJhcnJkYXkxM211bCIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iNSIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPgogICAgICA8cGF0aCBkPSJNMCwwIEwwLDcgTDcsMy41IHoiIGZpbGw9IiMxQUJDOUMiLz4KICAgIDwvbWFya2VyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzQwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNtYXBiZ2RheTEzbXVsKSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iNTIiIHgyPSI3NDAiIHkyPSI1MiIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSIwIiB5MT0iMTA0IiB4Mj0iNzQwIiB5Mj0iMTA0IiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjAiIHkxPSIxNTYiIHgyPSI3NDAiIHkyPSIxNTYiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMCIgeTE9IjIwOCIgeDI9Ijc0MCIgeTI9IjIwOCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxsaW5lIHgxPSIxMDUiIHkxPSIwIiB4Mj0iMTA1IiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjIxMSIgeTE9IjAiIHgyPSIyMTEiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iMzE3IiB5MT0iMCIgeDI9IjMxNyIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPjxsaW5lIHgxPSI0MjIiIHkxPSIwIiB4Mj0iNDIyIiB5Mj0iMjYwIiBzdHJva2U9IiNENEQwQzgiIHN0cm9rZS13aWR0aD0iMC40Ii8+PGxpbmUgeDE9IjUyOCIgeTE9IjAiIHgyPSI1MjgiIHkyPSIyNjAiIHN0cm9rZT0iI0Q0RDBDOCIgc3Ryb2tlLXdpZHRoPSIwLjQiLz48bGluZSB4MT0iNjM0IiB5MT0iMCIgeDI9IjYzNCIgeTI9IjI2MCIgc3Ryb2tlPSIjRDREMEM4IiBzdHJva2Utd2lkdGg9IjAuNCIvPgogIDxwb2x5bGluZSBwb2ludHM9IjY4MC4xLDE3MC4zIDU5LjksODkuNyAxMDYuMSwxMzQuOCA5NS4zLDE0MC4xIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMCwwLDAsMC4xOCkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBvbHlsaW5lIHBvaW50cz0iNjgwLjEsMTcwLjMgNTkuOSw4OS43IDEwNi4xLDEzNC44IDk1LjMsMTQwLjEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFBQkM5QyIgc3Ryb2tlLXdpZHRoPSIzLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgbWFya2VyLWVuZD0idXJsKCNhcnJkYXkxM211bCkiLz4KICA8Y2lyY2xlIGN4PSI2ODAuMSIgY3k9IjE3MC4zIiByPSI5LjUiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjY4MC4xIiBjeT0iMTcwLjMiIHI9IjciIGZpbGw9IiNFNjdFMjIiLz4KPGNpcmNsZSBjeD0iNTkuOSIgY3k9Ijg5LjciIHI9IjcuNSIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNTkuOSIgY3k9Ijg5LjciIHI9IjUiIGZpbGw9IiNDMDM5MkIiLz4KPGNpcmNsZSBjeD0iMTA2LjEiIGN5PSIxMzQuOCIgcj0iNy41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMDYuMSIgY3k9IjEzNC44IiByPSI1IiBmaWxsPSIjQzAzOTJCIi8+CjxjaXJjbGUgY3g9Ijk1LjMiIGN5PSIxNDAuMSIgcj0iOS41IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI5NS4zIiBjeT0iMTQwLjEiIHI9IjciIGZpbGw9IiMyRDUwMTYiLz4KCiAgPHRleHQgeD0iNjcxLjEiIHk9IjE3NC4zIiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5NdWxleSBQb2ludDwvdGV4dD4KPHRleHQgeD0iNjguOSIgeT0iOTMuNyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPktvZGFjaHJvbWUgQmFzaW4gU1A8L3RleHQ+Cjx0ZXh0IHg9IjEwNi4xIiB5PSIxMjEuODAwMDAwMDAwMDAwMDEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjkuNSIgZmlsbD0iIzFBMUEyRSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+R3Jvc3Zlbm9yIEFyY2g8L3RleHQ+Cjx0ZXh0IHg9Ijk1LjMiIHk9IjE2MC4xIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiMxQTFBMkUiIGZvbnQtd2VpZ2h0PSJib2xkIj5HcmFuZCBTdGFpcmNhc2UgQkxNIOKApjwvdGV4dD4KCiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzFBMUEyRSIgb3BhY2l0eT0iMC45Ii8+CiAgPHRleHQgeD0iMTAiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0U4RDVCNyI+RGF5IDEzIOKAlCBNdWxleSBQb2ludCB0byBLb2RhY2hyb21lPC90ZXh0PgogIDxyZWN0IHg9IjU4NiIgeT0iMyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxOCIgZmlsbD0icmdiYSgwLDAsMCwwLjMpIiByeD0iMiIvPgogIDxjaXJjbGUgY3g9IjU5OCIgY3k9IjEyIiByPSI0IiBmaWxsPSIjRTY3RTIyIi8+CiAgPHRleHQgeD0iNjA1IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+U3RhcnQ8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjM0IiBjeT0iMTIiIHI9IjQiIGZpbGw9IiNDMDM5MkIiLz4KICA8dGV4dCB4PSI2NDEiIHk9IjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSIjRThENUI3Ij5TdG9wPC90ZXh0PgogIDxjaXJjbGUgY3g9IjY3MiIgY3k9IjEyIiByPSI0IiBmaWxsPSIjMkQ1MDE2Ii8+CiAgPHRleHQgeD0iNjc5IiB5PSIxNiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI0U4RDVCNyI+Q2FtcC9Ib3RlbDwvdGV4dD4KPC9zdmc+" alt="Day 13 — Muley Point to Kodachrome" style="width:100%;display:block;">
+  <a href="https://www.google.com/maps/dir/37.4049%2C-109.9265/37.5245%2C-111.9947/37.4486%2C-111.8434/37.4500%2C-111.8800" target="_blank"
+     style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
+            color:#E67E22;font-family:monospace;font-size:7.5pt;font-weight:bold;
+            letter-spacing:0.08em;text-decoration:none;padding:5px 11px;
+            border:1px solid #E67E22;">🗺 OPEN IN GOOGLE MAPS →</a>
+</div>
+
+    <div class="camp-info-box">
+      <strong>🏕 North Campground Loop B Site #48 (Reserved)</strong><br>
+      Steps from the Rim Trail — walk from your tent to Sunrise Point in 5 minutes. Vault toilets, water, general store with showers nearby. Shuttle stop at campground entrance. Elevation: 8,000 ft — nights drop to 30°F in May, pack layers.
+      <br><a href="https://maps.google.com/?q=37.6402,-112.1699" target="_blank">📍 North Campground → Google Maps</a> &nbsp;|&nbsp; <a href="https://www.recreation.gov/camping/campgrounds/234058" target="_blank">📋 Recreation.gov Reservation</a>
+    </div>
+
+    <div class="feel-box">
+      <span class="energy-badge">🔴 High Reward Finale</span>
+      Bryce Canyon doesn't look real. Dense orange and pink hoodoos arranged in natural amphitheaters. At 8,000–9,000 ft, April/May brings cool days and cold nights. Three days means every major trail without rushing — and sunrise from your tent door to cap the trip.
+    </div>
+
+    <div class="photo-strip two">
+      <div class="photo-item tall">
+        <img src="images/22.jpg" alt="Thor's Hammer">
+        <div class="photo-caption">Thor's Hammer — Navajo Loop Trail, Sunset Point</div>
+      </div>
+      <div class="photo-item tall">
+        <img src="images/23.jpg" alt="Sunrise Point Bryce">
+        <div class="photo-caption">Sunrise Point — 5 min walk from your tent</div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🎯 Three-Day Plan</h3><div class="section-rule"></div></div>
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-label">Day 1 — May 3 · First Look</div>
+        <h4>Rim Trail + Navajo Loop at Sunset</h4>
+        <p>Walk the rim from camp to Sunrise Point, shuttle to Sunset Point, hike Navajo Loop back up. The classic Bryce intro.</p>
+        <div class="option-stops"><strong>Route:</strong> North CG → Sunrise Point → shuttle → Sunset Point → Navajo Loop → camp</div>
+        <div class="option-stops"><strong>Hike:</strong> Navajo Loop (1.8 mi loop · 550 ft)</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=37.6301,-112.1726" target="_blank">Sunset Point</a><a class="map-link" href="https://maps.google.com/?q=37.6341,-112.1659" target="_blank">Sunrise Point</a></div>
+      </div>
+      <div class="option-card recommended">
+        <div class="option-label">★ Day 2 — May 4 · Best Day</div>
+        <h4>Queen's Garden + Navajo Combo</h4>
+        <p>The must-do of Bryce Canyon. Descend on Navajo Loop, walk the canyon floor among hoodoos, climb out via Queen's Garden. 2.9 miles of magic.</p>
+        <div class="option-stops"><strong>Route:</strong> Sunset Point → Navajo Loop down → canyon floor → Queen's Garden up → Sunrise Point → shuttle back</div>
+        <div class="option-stops"><strong>Hike:</strong> 2.9 mi combo · ~2 hrs · 521 ft elevation</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=37.6301,-112.1726" target="_blank">Trail Start → Sunset Point</a></div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">Day 3 — May 5 · Sunrise + Depart</div>
+        <h4>Sunrise Point at Dawn</h4>
+        <p>Set the alarm. Walk 5 min from your tent to Sunrise Point. Watch the first light turn hoodoos from gray to gold to orange. Coffee at the amphitheater edge. Then pack up.</p>
+        <div class="option-stops"><strong>Walk:</strong> 0.5 mi from tent to Sunrise Point</div>
+        <div class="option-why">This is the closing image of the whole trip. The alarm is worth it.</div>
+        <div class="option-links"><a class="map-link" href="https://maps.google.com/?q=37.6341,-112.1659" target="_blank">Sunrise Point</a></div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🥾 Hikes in Detail</h3><div class="section-rule"></div></div>
+    <div class="hikes-grid">
+      <div class="hike-card">
+        <h4>🔨 Navajo Loop Trail</h4>
+        <div class="hike-meta">1.8 mi loop · 550 ft · ~1.5 hrs · from Sunset Point</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Walk through Thor's Hammer, Wall Street narrows, return up through hoodoo forest</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Very busy 9 AM–3 PM. Go at sunrise or late afternoon.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Wall Street section narrows to shoulder width — silent, eerie, beautiful. May be closed early season.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★★</span> If you do only one: this one</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>👑 Queen's Garden Trail</h4>
+        <div class="hike-meta">1.8 mi RT · 320 ft · ~1.5 hrs · from Sunrise Point</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Easiest below-rim trail with the most dramatic hoodoo-surrounded views</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">Most families turn around before the best part — keep going</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Queen Victoria hoodoo at the trail's end looks uncannily like a crowned figure. Named accurately.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Combine with Navajo Loop for the best 2.9 mi in Utah</span></div>
+        </div>
+      </div>
+      <div class="hike-card">
+        <h4>🌅 Fairyland Loop</h4>
+        <div class="hike-meta">8.0 mi loop · ~4 hrs · strenuous · fewest crowds</div>
+        <div class="hike-stats">
+          <div class="stat-cell"><span class="stat-label">Why Worth It</span><span class="stat-value">Longest day hike in the park — full immersion in hoodoo country, Tower Bridge arch</span></div>
+          <div class="stat-cell"><span class="stat-label">Crowds</span><span class="stat-value">10% of the traffic of Navajo Loop. Often feel completely alone.</span></div>
+          <div class="stat-cell"><span class="stat-label">What's Unique</span><span class="stat-value">Tower Bridge spur at mile 4 — a rock formation resembling London's famous bridge, surprisingly accurate.</span></div>
+          <div class="stat-cell"><span class="stat-label">Effort vs Reward</span><span class="stat-value"><span class="stars">★★★★☆</span> Best escape from crowds in Bryce</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><h3>🏕️ Dispersed Camp Alternatives Near Bryce</h3><div class="section-rule"></div></div>
+    <div class="camp-grid">
+      <div>
+        <span class="camp-cell-header view">🌄 Best View Alternative</span>
+        <div class="camp-cell">
+          <strong>Red Canyon BLM (Hwy 12)</strong>
+          Pink cliffs with fewer crowds. Hoodoo country without the NP entry fee.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.75,-112.33" target="_blank">37.75, -112.33</a></span>
+          <span class="price">Free · Scenic in its own right</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header wind">🛡️ Protected</span>
+        <div class="camp-cell">
+          <strong>Dixie NF Dispersed (north)</strong>
+          Ponderosa forest, completely wind-protected. FR 132 area.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.70,-112.30" target="_blank">37.70, -112.30</a></span>
+          <span class="price">Free · Dense tree cover</span>
+        </div>
+      </div>
+      <div>
+        <span class="camp-cell-header backup">🔄 Easy Backup</span>
+        <div class="camp-cell">
+          <strong>Tropic UT Area</strong>
+          Near Tropic, UT. Less dramatic but easy access. Has services nearby.
+          <span class="coords">📍 <a href="https://maps.google.com/?q=37.62,-112.08" target="_blank">Near Tropic UT</a></span>
+          <span class="price">Free BLM nearby · Town has services</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="golden-hour">
+      <div class="golden-hour-header">🌅 THE Moment — Sunrise Point at First Light</div>
+      <dl>
+        <dt>Where</dt><dd>Walk 5 minutes from your tent. Arrive at Sunrise Point 20 minutes before sunrise. Bring coffee.</dd>
+        <dt>Why It Matters</dt><dd>The hoodoos light up in sequence from east to west as the sun rises over the canyon rim. They go from gray to gold to orange in under 10 minutes. This is the closing image of the entire trip.</dd>
+        <dt>Worth It?</dt><dd>It's 5 minutes from your tent. You're already there. Set the alarm. This is why you camped here.</dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div class="quick-decisions">
+        <div class="quick-decisions-header">⚡ Quick Decisions</div>
+        <div class="decision-row"><span class="decision-icon">❄️</span><span class="decision-trigger">Snow/frost (possible May)</span><span class="decision-arrow">→</span><span class="decision-action">Wall Street may be closed — use Queen's Garden Trail instead</span></div>
+        <div class="decision-row"><span class="decision-icon">👥</span><span class="decision-trigger">Sunrise Point crowded</span><span class="decision-arrow">→</span><span class="decision-action">Walk 10 min east toward Fairyland — empty and same views</span></div>
+        <div class="decision-row"><span class="decision-icon">💨</span><span class="decision-trigger">Wind at camp (8,000 ft)</span><span class="decision-arrow">→</span><span class="decision-action">Red Canyon BLM has better forest wind protection</span></div>
+      </div>
+      <div class="fuel-box">
+        <div class="fuel-header">⛽ Fuel Strategy — Departure</div>
+        <ul>
+          <li>Bryce Canyon City fuel is 30% premium — avoid</li>
+          <li>Panguitch UT on Hwy 89 (~15 min north) — significantly cheaper</li>
+          <li>Fill in Panguitch for your May 5 drive home to SLC</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lc-box">
+      <div class="lc-header">🚙 Land Cruiser Advantage</div>
+      <div class="lc-go"><strong>Push deeper:</strong> Red Canyon BLM tracks (Hwy 12 area) — beautiful pink rock country most vehicles avoid. Explore the forest service roads north of the park.</div>
+      <div class="lc-avoid"><strong>Never:</strong> Drive off-trail anywhere in Bryce Canyon NP — biocrust destruction is permanent and carries a $5,000+ fine.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  REFERENCE PAGE                                                        -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="ref-page">
+  <h2>📋 Quick Reference</h2>
+  <p style="color:var(--stone); font-style:italic; font-size:9pt;">Contacts, booking links, GPX files, and Land Cruiser trail notes</p>
+
+  <div class="ref-section">
+    <h3>🔗 Essential Booking Links</h3>
+    <div class="link-grid">
+      <div class="link-item">Pine Flat West CG (Sedona) — <a href="https://www.recreation.gov/camping/campgrounds/232320" target="_blank">Recreation.gov</a></div>
+      <div class="link-item">Desert View CG (Grand Canyon) — <a href="https://www.recreation.gov" target="_blank">Recreation.gov</a></div>
+      <div class="link-item">North Campground Bryce Canyon — <a href="https://www.recreation.gov/camping/campgrounds/234058" target="_blank">Recreation.gov</a></div>
+      <div class="link-item">Ken's Tours (Lower Antelope Canyon) — <a href="https://lowerantelope.com" target="_blank">lowerantelope.com</a></div>
+      <div class="link-item">Dixie's Lower Antelope Canyon — <a href="https://antelopelowercanyon.com" target="_blank">antelopelowercanyon.com</a></div>
+      <div class="link-item">Antelope Canyon Tours Inc. (Upper) — <a href="https://antelopecanyon.com" target="_blank">antelopecanyon.com</a></div>
+      <div class="link-item">Grand Canyon NPS — <a href="https://www.nps.gov/grca" target="_blank">nps.gov/grca</a></div>
+      <div class="link-item">Bryce Canyon NPS — <a href="https://www.nps.gov/brca" target="_blank">nps.gov/brca</a></div>
+      <div class="link-item">Coconino NF (Flagstaff) — <a href="https://www.fs.usda.gov/coconino" target="_blank">fs.usda.gov/coconino</a></div>
+      <div class="link-item">BLM Monticello (Bears Ears) — <a href="https://www.blm.gov/office/monticello-field-office" target="_blank">blm.gov</a></div>
+      <div class="link-item">Bears Ears Partnership — <a href="https://www.bearsearspartnership.org" target="_blank">bearsearspartnership.org</a></div>
+      <div class="link-item">AllTrails (all parks) — <a href="https://www.alltrails.com" target="_blank">alltrails.com</a></div>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <h3>📞 Emergency & Ranger Contacts</h3>
+    <div class="contact-grid">
+      <div class="contact-item"><strong>Coconino NF Flagstaff Ranger District</strong><span>(928) 526-0866</span></div>
+      <div class="contact-item"><strong>Grand Canyon NPS Emergency</strong><span>(928) 638-7805</span></div>
+      <div class="contact-item"><strong>Bryce Canyon NPS</strong><span>(435) 834-5322</span></div>
+      <div class="contact-item"><strong>BLM Kanab (Grand Staircase)</strong><span>(435) 644-1200</span></div>
+      <div class="contact-item"><strong>BLM Monticello (Bears Ears)</strong><span>(435) 587-1510</span></div>
+      <div class="contact-item"><strong>Mexican Hat Lodge (fuel check)</strong><span>(435) 683-2220</span></div>
+      <div class="contact-item"><strong>Page AZ Visitor Center</strong><span>(928) 660-3405</span></div>
+      <div class="contact-item"><strong>Valley of Fire NV</strong><span>(702) 397-2088</span></div>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <h3>🗺️ GPX Track Files (included in download folder)</h3>
+    <table class="gpx-table">
+      <thead><tr><th>Filename</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td>Full_Trip_Overview.gpx</td><td>Complete route SLC → Bryce Canyon, all 22 waypoints, full overview track</td></tr>
+        <tr><td>Valley_of_Fire_to_Sedona.gpx</td><td>Fire Wave, White Domes, Petroglyph Canyon, both campgrounds</td></tr>
+        <tr><td>Edge_of_World.gpx</td><td>FR 231 route track + rim camp, Jenga Rocks, rig-accessible sites</td></tr>
+        <tr><td>Grand_Canyon_East_Rim.gpx</td><td>Desert View CG, Watchtower, Lipan Point, South Kaibab TH, Mather Point</td></tr>
+        <tr><td>Horseshoe_Bend_Page.gpx</td><td>Horseshoe Bend, Page hotels area, both canyons, Lone Rock Beach BLM</td></tr>
+        <tr><td>Muley_Point_Moki_Dugway.gpx</td><td>Full approach track, Moki Dugway base, Goosenecks, Muley Point, Valley of the Gods</td></tr>
+        <tr><td>Kodachrome_Grand_Staircase.gpx</td><td>Your coords, Kodachrome Basin SP, Grosvenor Arch, Cottonwood Canyon Road track</td></tr>
+        <tr><td>Bryce_Canyon_Full.gpx</td><td>North CG, all 6 major trailheads, Sunrise/Sunset/Inspiration/Bryce/Fairyland Points</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8pt; color:var(--stone); margin-top:6px; font-style:italic;">Import .gpx files directly into OnX Offroad, Gaia GPS, or Google Maps (My Maps). Download offline maps before leaving cell service.</p>
+  </div>
+
+  <div class="ref-section">
+    <h3>🔧 Land Cruiser Trail Notes</h3>
+    <ul class="lc-notes">
+      <li>Air down to 25–28 PSI on rocky forest roads (FR 231, Cottonwood Canyon, Moki Dugway)</li>
+      <li>Carry a hi-lift jack, traction boards, and 2-gallon water reserve minimum</li>
+      <li>Recovery gear especially important on FR 231 (Edge of World) — remote, no cell service</li>
+      <li>FR 231 (Edge of World): dry weather only. Clay becomes oil-slick when wet — leave immediately if rain starts</li>
+      <li>Cottonwood Canyon Road: 4x4 strongly recommended. 2WD sedans get stuck regularly in ruts</li>
+      <li>Muley Point Road: accessible in dry conditions to any high-clearance vehicle without 4x4</li>
+      <li>Mescal 4x4 shortcut to Devil's Bridge (Sedona): use FR spur to cut 2 miles and 90% of crowds</li>
+      <li>Schnebly Hill Road (Sedona): Red clay after rain stains permanently — scotchgard undercarriage before trip</li>
+      <li>Grand Canyon East Rim roads (FR 302): generally good gravel, HC helpful but not required</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:32px; padding:16px; background:var(--night); text-align:center;">
+    <p style="font-family:var(--font-display); font-size:14pt; color:var(--sand); margin-bottom:4px;">Safe travels. The Southwest earns a permanent place in memory.</p>
+    <p style="font-family:var(--font-body); font-size:9pt; color:var(--sand-dark); font-style:italic;">Take time to sit still in each place — the best moments are the ones you're not rushing through.</p>
+  </div>
+</div>
+
+</div><!-- /book -->
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!--  PHOTO SWAP GUIDE (remove this section before final print)           -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+
+</body>
+</html>

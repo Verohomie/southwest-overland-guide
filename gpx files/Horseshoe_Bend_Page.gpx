@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Horseshoe Bend and Page AZ</name>
+    <time>2026-03-26T19:29:21.171381Z</time>
+  </metadata>
+  <wpt lat="36.8791" lon="-111.51">
+    <name>Horseshoe Bend Trailhead</name>
+    <desc>1.5 mi RT, $10 parking, no guardrails</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9157" lon="-111.4559">
+    <name>Page AZ — Hotels Area</name>
+    <desc>Courtyard/Holiday Inn/Hyatt Place</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.8617" lon="-111.3743">
+    <name>Lower Antelope Canyon (Ken's/Dixie's)</name>
+    <desc>Book weeks in advance</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.8652" lon="-111.3749">
+    <name>Upper Antelope Canyon</name>
+    <desc>Antelope Canyon Tours Inc.</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9455" lon="-111.4831">
+    <name>Lone Rock Beach BLM Camp</name>
+    <desc>Lake Powell shore, $12/night</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+</gpx>

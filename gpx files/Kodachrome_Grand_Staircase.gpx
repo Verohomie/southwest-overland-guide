@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Kodachrome Basin + Grand Staircase</name>
+    <time>2026-03-26T19:29:21.172000Z</time>
+  </metadata>
+  <wpt lat="37.3996" lon="-112.5792">
+    <name>Your Coordinates (37.39931, -112.57921)</name>
+    <desc>Near Kodachrome Basin SP</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.5251" lon="-111.9981">
+    <name>Kodachrome Basin State Park Entrance</name>
+    <desc>$10/vehicle, 67 stone spires</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.526" lon="-112.001">
+    <name>Grand Parade Trail</name>
+    <desc>2 mi loop past all sedimentary pipes</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.4578" lon="-111.8439">
+    <name>Grosvenor Arch</name>
+    <desc>Largest double arch in US, almost no visitors</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.35" lon="-111.98">
+    <name>Round Valley Draw Narrows</name>
+    <desc>2.5 mi RT, small slot canyon — optional</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.45" lon="-111.88">
+    <name>Cottonwood Canyon Road BLM Dispersed</name>
+    <desc>Free dispersed camping</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <trk>
+    <name>Cottonwood Canyon Road</name>
+    <trkseg>
+      <trkpt lat="37.06" lon="-111.91" />
+      <trkpt lat="37.15" lon="-111.9" />
+      <trkpt lat="37.25" lon="-111.88" />
+      <trkpt lat="37.35" lon="-111.87" />
+      <trkpt lat="37.4578" lon="-111.8439" />
+      <trkpt lat="37.5251" lon="-111.9981" />
+    </trkseg>
+  </trk>
+</gpx>

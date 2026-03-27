@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Southwest Overlanding Trip — Full Route</name>
+    <time>2026-03-26T19:29:21.169461Z</time>
+  </metadata>
+  <wpt lat="40.7608" lon="-111.891">
+    <name>START: Salt Lake City UT</name>
+    <desc>Departure point</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.4795" lon="-114.5348">
+    <name>Valley of Fire — Fire Wave</name>
+    <desc>Best hike, 1.5 mi RT</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.5072" lon="-114.5348">
+    <name>Valley of Fire — White Domes</name>
+    <desc>1.1 mi loop, slot canyon</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.1894" lon="-114.053">
+    <name>Kingman AZ — Hotel Night</name>
+    <desc>Gateway to Sedona</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9891" lon="-111.7511">
+    <name>Pine Flat West CG — Sedona</name>
+    <desc>Site #22, Oak Creek Canyon</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9004" lon="-111.8433">
+    <name>Devil's Bridge — Sedona</name>
+    <desc>4.0 mi RT, tallest arch</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9973" lon="-111.7446">
+    <name>West Fork Trail — Sedona</name>
+    <desc>6 mi RT, most beautiful canyon hike</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.8697" lon="-111.761">
+    <name>Sedona Hotel</name>
+    <desc>Apr 24 rest day</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9799" lon="-111.7943">
+    <name>Edge of the World (East Pocket)</name>
+    <desc>FR 231, 26 mi from Flagstaff</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0425" lon="-111.8248">
+    <name>Desert View CG — Grand Canyon</name>
+    <desc>Site #24, East Rim</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0536" lon="-112.0845">
+    <name>South Kaibab Trailhead — GCNP</name>
+    <desc>Best below-rim hike</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.8791" lon="-111.51">
+    <name>Horseshoe Bend</name>
+    <desc>1.5 mi RT, $10 parking</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9157" lon="-111.4559">
+    <name>Page AZ — Hotel</name>
+    <desc>Base for Antelope Canyon</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.8617" lon="-111.3743">
+    <name>Lower Antelope Canyon</name>
+    <desc>Ken's Tours or Dixie's</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9455" lon="-111.4831">
+    <name>Lone Rock Beach BLM Camp</name>
+    <desc>Lake Powell shore dispersed</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.4049" lon="-109.9265">
+    <name>Muley Point — Cedar Mesa</name>
+    <desc>Best view dispersed camping</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.1732" lon="-109.9215">
+    <name>Goosenecks State Park</name>
+    <desc>Free overlook, 5 min stop</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.5251" lon="-111.9981">
+    <name>Kodachrome Basin SP</name>
+    <desc>Stone spires, Grand Parade Trail</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.4578" lon="-111.8439">
+    <name>Grosvenor Arch</name>
+    <desc>Largest double arch, nearly empty</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6402" lon="-112.1699">
+    <name>North Campground — Bryce Canyon</name>
+    <desc>Loop B Site #48</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6341" lon="-112.1659">
+    <name>Sunrise Point — Bryce Canyon</name>
+    <desc>Walk from tent</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6301" lon="-112.1726">
+    <name>Sunset Point — Bryce Canyon</name>
+    <desc>Navajo Loop start</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <trk>
+    <name>Full Route</name>
+    <trkseg>
+      <trkpt lat="40.7608" lon="-111.891" />
+      <trkpt lat="37.975" lon="-113.0644" />
+      <trkpt lat="36.86" lon="-114.0669" />
+      <trkpt lat="36.4795" lon="-114.5348" />
+      <trkpt lat="35.1894" lon="-114.053" />
+      <trkpt lat="34.8697" lon="-111.761" />
+      <trkpt lat="34.9799" lon="-111.7943" />
+      <trkpt lat="36.0536" lon="-112.0845" />
+      <trkpt lat="36.0425" lon="-111.8248" />
+      <trkpt lat="36.8791" lon="-111.51" />
+      <trkpt lat="36.9157" lon="-111.4559" />
+      <trkpt lat="36.8617" lon="-111.3743" />
+      <trkpt lat="36.9455" lon="-111.4831" />
+      <trkpt lat="37.1732" lon="-109.9215" />
+      <trkpt lat="37.4049" lon="-109.9265" />
+      <trkpt lat="37.3996" lon="-112.5792" />
+      <trkpt lat="37.5251" lon="-111.9981" />
+      <trkpt lat="37.6402" lon="-112.1699" />
+    </trkseg>
+  </trk>
+</gpx>

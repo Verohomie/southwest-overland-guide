@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Muley Point via Moki Dugway</name>
+    <time>2026-03-26T19:29:21.171678Z</time>
+  </metadata>
+  <wpt lat="36.9157" lon="-111.4559">
+    <name>Start: Page AZ</name>
+    <desc>Fill up fuel here</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9835" lon="-110.1068">
+    <name>Monument Valley Visitor Center</name>
+    <desc>Optional — 17-mile scenic loop</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.9841" lon="-109.9426">
+    <name>Mexican Hat UT</name>
+    <desc>Fuel if needed — call ahead</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.1732" lon="-109.9215">
+    <name>Goosenecks State Park</name>
+    <desc>Free overlook, 5 min stop — do not skip</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.1748" lon="-109.8696">
+    <name>Moki Dugway Base</name>
+    <desc>3-mile 11% grade switchbacks begin here</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.21" lon="-109.92">
+    <name>Moki Dugway Top</name>
+    <desc>Catch breath — views already epic</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.4049" lon="-109.9265">
+    <name>Muley Point Rim Camp</name>
+    <desc>BLM dispersed, Monument Valley view</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.28" lon="-109.89">
+    <name>Valley of the Gods BLM</name>
+    <desc>Backup camp if Muley Point full</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <trk>
+    <name>Moki Dugway Approach</name>
+    <trkseg>
+      <trkpt lat="37.1748" lon="-109.8696" />
+      <trkpt lat="37.185" lon="-109.882" />
+      <trkpt lat="37.195" lon="-109.895" />
+      <trkpt lat="37.21" lon="-109.92" />
+      <trkpt lat="37.25" lon="-109.923" />
+      <trkpt lat="37.35" lon="-109.925" />
+      <trkpt lat="37.4049" lon="-109.9265" />
+    </trkseg>
+  </trk>
+</gpx>

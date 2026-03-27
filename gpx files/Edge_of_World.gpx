@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Edge of the World — FR 231 Route</name>
+    <time>2026-03-26T19:29:21.170651Z</time>
+  </metadata>
+  <wpt lat="35.1985" lon="-111.7453">
+    <name>FR 231 Start (Woody Mountain Rd, Flagstaff)</name>
+    <desc>Turn south from Kiltie Lane</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9799" lon="-111.7943">
+    <name>Edge of the World Rim Camp</name>
+    <desc>GPS 34.979889, -111.794281</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="34.9755" lon="-111.7685">
+    <name>Jenga Rocks (East Pocket Knob)</name>
+    <desc>Stacked boulder formation</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.1" lon="-111.78">
+    <name>FR 231 / FR 535 Intersection</name>
+    <desc>Good camp spot for larger rigs</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <trk>
+    <name>FR 231 Access Route</name>
+    <trkseg>
+      <trkpt lat="35.1985" lon="-111.7453" />
+      <trkpt lat="35.15" lon="-111.76" />
+      <trkpt lat="35.1" lon="-111.78" />
+      <trkpt lat="35.05" lon="-111.79" />
+      <trkpt lat="35.0" lon="-111.792" />
+      <trkpt lat="34.9799" lon="-111.7943" />
+    </trkseg>
+  </trk>
+</gpx>

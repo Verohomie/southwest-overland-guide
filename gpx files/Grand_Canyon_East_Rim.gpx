@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Grand Canyon — Desert View Area</name>
+    <time>2026-03-26T19:29:21.171006Z</time>
+  </metadata>
+  <wpt lat="36.0425" lon="-111.8248">
+    <name>Desert View Campground Site 24</name>
+    <desc>Your camp, 25 mi east of village</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0411" lon="-111.8256">
+    <name>Desert View Watchtower</name>
+    <desc>East end of South Rim, remarkable views</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.1188" lon="-111.8804">
+    <name>Lipan Point</name>
+    <desc>Best Colorado River view, rarely crowded</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0501" lon="-111.9777">
+    <name>Grandview Point</name>
+    <desc>Historic mining trail, uncrowded below-rim hike</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0536" lon="-112.0845">
+    <name>South Kaibab Trailhead</name>
+    <desc>Best below-rim hike — Cedar Ridge 1.5 mi down</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0595" lon="-112.1062">
+    <name>Mather Point</name>
+    <desc>Most iconic canyon viewpoint</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0577" lon="-112.1186">
+    <name>Yavapai Geology Museum</name>
+    <desc>Best interpretive geology views</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.0572" lon="-112.1432">
+    <name>Bright Angel Trailhead</name>
+    <desc>Alternate below-rim hike, water available</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+</gpx>

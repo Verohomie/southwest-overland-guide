@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Bryce Canyon National Park</name>
+    <time>2026-03-26T19:29:21.172340Z</time>
+  </metadata>
+  <wpt lat="37.6402" lon="-112.1699">
+    <name>North Campground Loop B</name>
+    <desc>Your camp — 5 min walk to rim</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6341" lon="-112.1659">
+    <name>Sunrise Point</name>
+    <desc>Walk from tent — prime sunrise spot</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6301" lon="-112.1726">
+    <name>Sunset Point / Navajo Loop Start</name>
+    <desc>THE trail start — go left for Wall Street</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6249" lon="-112.1787">
+    <name>Inspiration Point</name>
+    <desc>Best hoodoo density view in park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.5972" lon="-112.1593">
+    <name>Bryce Point</name>
+    <desc>Southernmost major viewpoint</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.6627" lon="-112.158">
+    <name>Fairyland Point</name>
+    <desc>Least crowded area, start of 8-mi loop</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.629" lon="-112.1708">
+    <name>Queen's Garden Trailhead</name>
+    <desc>Easiest below-rim trail</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="37.75" lon="-112.33">
+    <name>Red Canyon BLM Dispersed</name>
+    <desc>Dispersed camp alternative off Hwy 12</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+</gpx>

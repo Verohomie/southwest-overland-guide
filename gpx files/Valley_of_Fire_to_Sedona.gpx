@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="Southwest Overland Trip Planner" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Valley of Fire — Key Sites</name>
+    <time>2026-03-26T19:29:21.170277Z</time>
+  </metadata>
+  <wpt lat="36.4263" lon="-114.5055">
+    <name>Elephant Rock</name>
+    <desc>Easy roadside stop, 0.5 mi loop</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.4795" lon="-114.5348">
+    <name>Fire Wave Trailhead</name>
+    <desc>1.5 mi RT, iconic slickrock</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.4823" lon="-114.5249">
+    <name>Rainbow Vista</name>
+    <desc>1.1 mi, panoramic views, fewer crowds</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.4694" lon="-114.5311">
+    <name>Mouse's Tank / Petroglyph Canyon</name>
+    <desc>2.0 mi RT, ancient petroglyphs</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.5072" lon="-114.5348">
+    <name>White Domes Loop</name>
+    <desc>1.1 mi loop, slot canyon, movie set ruins</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.4452" lon="-114.5354">
+    <name>Atlatl Rock Campground</name>
+    <desc>$20/night, red rock views</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="36.458" lon="-114.5354">
+    <name>Arch Rock Campground</name>
+    <desc>$20/night, more wind-protected</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+</gpx>
