@@ -1067,6 +1067,202 @@ a { color: var(--sky); }
       .weather-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+  
+  /* ═══════════════════════════════════════════════════════════════════
+     @media print — Hard copy / PDF optimisation
+     Browser print: File → Print → Save as PDF, or Cmd+P / Ctrl+P
+     ═══════════════════════════════════════════════════════════════════ */
+  @media print {
+
+    /* ── Page setup ── */
+    @page {
+      size: Letter portrait;
+      margin: 0.65in 0.6in 0.65in 0.6in;
+    }
+    @page :first {
+      margin-top: 0.4in;
+    }
+
+    /* ── Base resets ── */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    body {
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #1A1A2E !important;
+      background: white !important;
+    }
+
+    /* ── Navigation / header bar — hide ── */
+    .page-header-bar { display: none !important; }
+
+    /* ── Each day starts on a new page ── */
+    .day-page {
+      page-break-before: always;
+      break-before: page;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .day-page:first-of-type {
+      page-break-before: avoid;
+    }
+
+    /* ── Day banner — keep but cap height ── */
+    .day-banner {
+      height: 160px !important;
+      max-height: 160px !important;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .day-banner img {
+      height: 160px !important;
+      object-fit: cover;
+    }
+    .day-banner-content {
+      padding: 8px 12px !important;
+    }
+    .day-title { font-size: 20pt !important; }
+    .day-subtitle { font-size: 9pt !important; }
+    .day-date { font-size: 8pt !important; }
+    .day-number { font-size: 8pt !important; }
+
+    /* ── Day body ── */
+    .day-body {
+      padding: 8px 0 0 0 !important;
+    }
+
+    /* ── External banner images that may not load offline:
+          show alt text box instead ── */
+    .day-banner img[src^="http"] {
+      /* Still try to print — if cached it works; if not, fallback gracefully */
+      border: 1px solid #ccc;
+    }
+
+    /* ── Section headers ── */
+    .section-header {
+      page-break-after: avoid;
+      break-after: avoid;
+      margin-top: 10pt !important;
+      margin-bottom: 4pt !important;
+    }
+    .section-header h3 {
+      font-size: 10pt !important;
+      padding: 3px 6px !important;
+    }
+
+    /* ── Route / feel / camp / decisions boxes ── */
+    .feel-box, .route-card, .camp-grid, .decisions-box, .golden-box, .gpx-box {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      font-size: 9pt !important;
+    }
+    .feel-box { padding: 6px 10px !important; }
+    .route-card-body { font-size: 9pt !important; line-height: 1.4 !important; }
+
+    /* ── Option cards ── */
+    .option-card {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      padding: 5px 8px !important;
+      margin-bottom: 4pt !important;
+      font-size: 9pt !important;
+    }
+    .option-card h4 { font-size: 9.5pt !important; margin: 2px 0 3px 0 !important; }
+    .option-card p { font-size: 8.5pt !important; margin: 2px 0 !important; }
+    .option-label { font-size: 7.5pt !important; }
+    .option-stops { font-size: 8pt !important; }
+
+    /* ── Camp grid ── */
+    .camp-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+    }
+    .camp-cell { font-size: 8.5pt !important; padding: 5px 7px !important; }
+    .camp-cell-header { font-size: 8pt !important; padding: 3px 7px !important; }
+    .coords, .price { font-size: 7.5pt !important; }
+
+    /* ── Weather box ── */
+    .weather-box {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      padding: 8px 10px !important;
+      margin: 6pt 0 !important;
+    }
+    .weather-header { font-size: 8pt !important; }
+    .weather-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 4px !important;
+    }
+    .weather-cell { padding: 4px 5px !important; }
+    .w-label { font-size: 7pt !important; }
+    .w-val { font-size: 9pt !important; }
+    .weather-note { font-size: 8pt !important; }
+
+    /* ── Decision rows ── */
+    .decisions-box { gap: 3px !important; }
+    .decision-row { font-size: 8.5pt !important; padding: 4px 6px !important; }
+
+    /* ── Hike meta / option stops ── */
+    .hike-meta { font-size: 8pt !important; }
+
+    /* ── Map images — keep, don't page-break inside ── */
+    .day-body > div[style*="margin:6px 0 4px"] {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      max-height: 220px;
+      overflow: hidden;
+    }
+
+    /* ── Moon2 half-page layout — collapse to full width for PDF ── */
+    div[style*="grid-template-columns:1fr 1fr"] {
+      display: block !important;
+    }
+    div[style*="grid-template-columns:1fr 1fr"] > div {
+      width: 100% !important;
+      margin-bottom: 6pt;
+    }
+
+    /* ── Side-by-side photo grids — stack vertically ── */
+    div[style*="display:grid"] {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* ── Alt route purple banner ── */
+    div[style*="border-left:5px solid #9B59B6"] {
+      page-break-after: avoid;
+      break-after: avoid;
+      font-size: 9pt !important;
+      padding: 8px 10px !important;
+    }
+
+    /* ── Hike energy badge ── */
+    .energy-badge { font-size: 8pt !important; padding: 2px 6px !important; }
+
+    /* ── Links — show URL in grey for print ── */
+    a { color: #333 !important; text-decoration: none !important; }
+    .map-link { color: #555 !important; }
+
+    /* ── Google Maps buttons — hide in print (useless on paper) ── */
+    a[href*="google.com/maps"][style*="position:absolute"] {
+      display: none !important;
+    }
+
+    /* ── Itinerary table ── */
+    table { page-break-inside: avoid; break-inside: avoid; font-size: 9pt !important; }
+    th, td { padding: 4px 6px !important; }
+
+    /* ── Trip header / overview section ── */
+    .trip-header { page-break-after: avoid; }
+
+    /* ── Hide browser chrome artifacts ── */
+    .no-print { display: none !important; }
+
+  }
+
   </style>
 </head>
 <body>
