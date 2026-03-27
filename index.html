@@ -1019,7 +1019,55 @@ body {
 .mt12 { margin-top: 12px; }
 p { font-size: 9.5pt; line-height: 1.65; margin-bottom: 6px; }
 a { color: var(--sky); }
-</style>
+
+    .weather-box {
+      background: linear-gradient(135deg, #1A2744 0%, #0D1B2A 100%);
+      border: 1px solid #2A4070;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin: 8px 0 12px 0;
+    }
+    .weather-header {
+      font-family: Georgia, serif;
+      font-size: 11px;
+      color: #E8D5B7;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .weather-cell {
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .w-icon { font-size: 13px; }
+    .w-label { font-size: 9px; color: #8BA0C0; text-transform: uppercase; letter-spacing: 0.3px; }
+    .w-val { font-size: 11px; color: #E8D5B7; font-weight: bold; }
+    .weather-note {
+      font-size: 11px;
+      color: #A0B8D8;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+    .weather-note em { color: #F0C060; font-style: normal; font-weight: bold; }
+    .weather-note strong { color: #FF8C60; }
+    @media (max-width: 480px) {
+      .weather-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+  </style>
 </head>
 <body>
 <div class="book">
@@ -1110,6 +1158,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">⚡ Medium Energy</span>
       You leave the mundane behind the moment you cross into Nevada. Alien-red sandstone formations rise without warning from the Mojave floor — one of the most photogenic state parks in the West and barely known outside the Southwest. Drive 4.5 hrs, then hike at your own pace as golden hour approaches. <strong>Why it's special:</strong> you're camping inside the fire itself. April temperatures are perfect (65–85°F days, 50s at night).
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 20 · Valley of Fire, NV (elev. ~2,000 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">72–82°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">50–58°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">10–14 mph W/SW</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">~5%</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">~27%</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Sun hours</span><span class="w-val">12+ hrs</span></div>
+      </div>
+      <div class="weather-note">⚠️ Wind is the wildcard here — prevailing W/SW winds can gust 20–30+ mph across open ridges. Camp on <em>leeward</em> (east) side of BLM hills. Fire Wave slickrock gets dangerously slippery in wind — skip if gusty. Hot by afternoon; hike early or golden hour.</div>
     </div>
 
     <div class="gpx-box">
@@ -1335,6 +1396,19 @@ a { color: var(--sky); }
       This is the day the trip earns its overlanding title. Instead of a boring highway slab to Kingman, you leave the red rocks of Valley of Fire, cross the Mojave to the Colorado River, then swap pavement for 14 miles of wide, easy desert dirt road through abandoned gold mine country — the Silver Creek Road section of the Arizona Peace Trail. You emerge in Oatman: a genuine 1800s mining ghost town with wild burros wandering the main street, a century-old saloon, and more character than anywhere else on this drive. Then you finish on Historic Route 66 over Sitgreaves Pass — a real mountain road with sweeping views — into Kingman for the night. Four completely different landscapes. Two pieces of American history. One very happy Land Cruiser.
     </div>
 
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 21 · Mojave Desert / Oatman / Kingman (elev. 1,000–3,300 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">75–88°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">52–60°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">10–15 mph</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">&lt;5%</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">~20%</span></div>
+        <div class="weather-cell"><span class="w-icon">🌡️</span><span class="w-label">Silver Creek Rd</span><span class="w-val">Avoid if rain (clay)</span></div>
+      </div>
+      <div class="weather-note">⚠️ Silver Creek Road / AZ Peace Trail becomes impassable when wet — clay surface turns to glue. Check forecast night before. Oatman sits in a gap and can funnel winds. Kingman nights pleasant for hotel sleeping.</div>
+    </div>
+
     <div class="camp-info-box">
       <strong>🫏 Why this route instead of the highway?</strong><br>
       The straight I-40 option gets you to Kingman faster but gives you nothing — just interstate and truck stops. This route costs 45 extra minutes and gives you: a proper dirt road warm-up for the trip ahead, a ghost town straight out of a western film, wild burros that will literally eat out of your hand, and the most scenic mountain pass on all of Historic Route 66. It's the difference between driving <em>through</em> the Southwest and actually <em>experiencing</em> it — which is the whole point of this trip.
@@ -1479,6 +1553,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">🔴 High Energy</span>
       Sedona operates at maximum sensory overload — towering red buttes, creek-side camp in ponderosa pines, and trails that beg you to push further. Two days splits the classic hikes on Day 1 and the quieter gems on Day 2. <strong>Why it's special:</strong> the creek runs next to your tent and red cliffs rise above — you wake up inside a postcard.
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 22–23 · Sedona, AZ (elev. ~4,350 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">65–72°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">38–43°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">13–14 mph (windiest month)</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">~8% per day</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">~35%</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Sun hours</span><span class="w-val">10–11 hrs</span></div>
+      </div>
+      <div class="weather-note">⚠️ April is Sedona's windiest month — gusty afternoons are common, especially on exposed red rock. Cold overnight (bring layers for Pine Flat). If it rains, FR525 and Schnebly Hill roads turn to clay — check before driving dispersed. Mornings are magical: clear, calm, golden light on the red rock.</div>
     </div>
 
     <div class="photo-strip three">
@@ -1683,6 +1770,19 @@ a { color: var(--sky); }
       You've earned a bed, a real shower, and a dinner you didn't cook over a camp stove. Walk the easy vortex sites, eat well, and study the Grand Canyon section over dinner. Low commitment, high pleasure.
     </div>
 
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 24 · Sedona, AZ (elev. ~4,350 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">67–73°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">40–45°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">10–14 mph</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">~6%</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">~33%</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Condition</span><span class="w-val">Mostly sunny, pleasant</span></div>
+      </div>
+      <div class="weather-note">Rest day — ideal April weather for Sedona's vortex hikes and town. Afternoons can pick up wind on exposed mesas (Airport Mesa especially). Perfect evening temperatures for dining on the patio.</div>
+    </div>
+
     <div class="section-header"><h3>🏨 Affordable 3–4★ Hotel Picks</h3><div class="section-rule"></div></div>
     <table class="hotel-table">
       <thead><tr><th>Hotel</th><th>Est. Rate (Apr)</th><th>Why Choose It</th><th>Book At</th></tr></thead>
@@ -1767,6 +1867,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">🔴 High Adventure</span>
       East Pocket is one of the most cinematic camping experiences in Arizona. You drive 26 miles of forest service roads through ponderosa pines, and then the trees break — and Sedona's entire red rock wilderness is below you, 2,000 feet down. <strong>Arrive by 2 PM</strong> to snag a rim site. Your Land Cruiser was built for exactly this.
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 25 · Edge of the World / FR231 (elev. ~7,000 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">55–62°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">28–35°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">15–20 mph on rim</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain/Snow chance</span><span class="w-val">~10%</span></div>
+        <div class="weather-cell"><span class="w-icon">🥶</span><span class="w-label">Overnight</span><span class="w-val">Near or below freezing</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Condition</span><span class="w-val">10°F cooler than Sedona</span></div>
+      </div>
+      <div class="weather-note">⚠️ At 7,000 ft this is <em>cold camping</em> — overnight temps can dip below 30°F. Wind at the rim edge can be strong and constant. Bring a 20°F sleeping bag minimum. The ponderosa pines right behind the rim block wind well — don't camp on the exposed edge. Late April snow is possible but rare; check forecast.</div>
     </div>
 
     <div class="warning"><strong>⚠️ Critical:</strong> FR 231 becomes impassable in wet conditions — sticky red clay turns to ice. Check weather the morning of Apr 25. If rain is forecast, stay in Sedona or Flagstaff and try another day.</div>
@@ -1914,6 +2027,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">🔴 High Reward</span>
       Most visitors do the Grand Canyon in 4 hours. You have 3 days. That means below-rim hiking, the uncrowded Desert View Drive to the east, watching the Colorado River glint 4,000 feet below at sunrise, and actually sitting still long enough to feel the scale. Desert View is 25 miles from the tourist crush — quieter, darker skies, and you can reach spots the tour buses don't.
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 26–28 · Grand Canyon South Rim (elev. ~7,000 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">60–68°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">30–36°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">12–18 mph, breezy</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain/Snow chance</span><span class="w-val">~10% (late snow possible)</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">Very low (&lt;15%)</span></div>
+        <div class="weather-cell"><span class="w-icon">🥾</span><span class="w-label">Inner canyon</span><span class="w-val">+20–25°F warmer at bottom</span></div>
+      </div>
+      <div class="weather-note">⚠️ Rim temps are deceptively cold — daytime pleasant but overnight 30°F at Desert View. Inner canyon can be 80–90°F same day the rim is 60°F. <strong>Never hike down in the heat of day.</strong> Hike South Kaibab morning, back out by noon. Spring is breezy — windbreaker required at the rim. Late April snow flurries possible but typically short-lived.</div>
     </div>
 
     <div class="photo-strip two">
@@ -2085,6 +2211,19 @@ a { color: var(--sky); }
       Horseshoe Bend is a 270° Colorado River bend seen from 1,000 feet above — an image so perfect it looks AI-generated. The walk is 1.5 miles, takes 30 minutes, and costs $10 to park. Afternoon light is perfect. Then a hotel bed before tomorrow's Antelope Canyon.
     </div>
 
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — Apr 29–30 · Page, AZ / Lake Powell (elev. ~4,300 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">71–78°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">43–50°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">10–13 mph avg, gusts to 25+</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">&lt;5%</span></div>
+        <div class="weather-cell"><span class="w-icon">💧</span><span class="w-label">Humidity</span><span class="w-val">~20%</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Condition</span><span class="w-val">Mostly sunny, warm</span></div>
+      </div>
+      <div class="weather-note">Best weather of the whole trip. Warm days, low humidity, minimal rain. Horseshoe Bend morning is perfect — golden light before 10am. Lake Powell beach camping at Lone Rock can get wind off the water in afternoons. Antelope Canyon tour indoor — weather irrelevant except for afternoon light shafts (best noon–1pm Lower).</div>
+    </div>
+
     <div class="camp-info-box">
       <strong>🔵 Horseshoe Bend:</strong> 1.5 mi RT · 180 ft elevation · paved to overlook · $10/vehicle parking · No reservation needed<br>
       <strong>⚠️ Warning:</strong> No railings at the edge — every year people fall. Keep well back from the rim.<br>
@@ -2215,6 +2354,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">🔴 Epic Day</span>
       Muley Point may be the single greatest camping viewpoint in the American Southwest. From 5,715 feet on Cedar Mesa's edge, you see Monument Valley to the south, Goosenecks of the San Juan River directly below, Navajo Mountain to the west, and Bears Ears on the horizon. The drive up the Moki Dugway — 3 miles of 11% grade unpaved switchbacks with no guardrail — is equally magnificent. <strong>Arrive early for rim sites.</strong>
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — May 1 · Mexican Hat / Muley Point, UT (elev. 4,000–6,300 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High (valley)</span><span class="w-val">68–76°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low (rim)</span><span class="w-val">38–46°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">12–18 mph avg, 33 mph gusts possible</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">~8%</span></div>
+        <div class="weather-cell"><span class="w-icon">⚠️</span><span class="w-label">Moki Dugway</span><span class="w-val">Impassable when wet (clay)</span></div>
+        <div class="weather-cell"><span class="w-icon">🌌</span><span class="w-label">Night sky</span><span class="w-val">Dark sky area — exceptional</span></div>
+      </div>
+      <div class="weather-note">⚠️ Muley Point rim is exposed at 6,300 ft — TheDyrt campers report 33 mph gusts that rocked vans. Bring tent stakes rated for wind. If wind is strong, camp 100–200 yards back from the rim in the pines. <strong>Don't attempt Moki Dugway in rain</strong> — gravel becomes treacherous clay. Check forecast night before. Valley of the Gods is 1,500 ft lower and warmer.</div>
     </div>
 
     <div class="camp-info-box">
@@ -2397,6 +2549,19 @@ a { color: var(--sky); }
       Kodachrome Basin is one of Utah's most underrated parks — 67 stone spires rising from a red desert floor, named for its Kodachrome slide-film colors. Then Grosvenor Arch is 12 miles on a dirt road and almost nobody goes there. The whole area rewards curiosity over the well-worn path.
     </div>
 
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — May 2 · Kodachrome Basin / Grand Staircase, UT (elev. ~5,500 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">68–75°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">36–44°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">10–14 mph</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain chance</span><span class="w-val">~8%</span></div>
+        <div class="weather-cell"><span class="w-icon">⚠️</span><span class="w-label">Dirt roads</span><span class="w-val">Impassable when wet</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Condition</span><span class="w-val">Pleasant spring day</span></div>
+      </div>
+      <div class="weather-note">Transition day with great weather. Grand Staircase BLM roads turn to impassable mud in rain — check forecast before leaving Muley Point. Cottonwood Canyon Road is especially sensitive. Kodachrome Basin is a canyon that moderates wind well. Grosvenor Arch needs dry road access.</div>
+    </div>
+
     <div class="section-header"><h3>🎯 Choose Your Day</h3><div class="section-rule"></div></div>
     <div class="options-grid">
       <div class="option-card recommended">
@@ -2527,6 +2692,19 @@ a { color: var(--sky); }
     <div class="feel-box">
       <span class="energy-badge">🔴 High Reward Finale</span>
       Bryce Canyon doesn't look real. Dense orange and pink hoodoos arranged in natural amphitheaters. At 8,000–9,000 ft, April/May brings cool days and cold nights. Three days means every major trail without rushing — and sunrise from your tent door to cap the trip.
+    </div>
+
+    <div class="weather-box">
+      <div class="weather-header">🌡️ Historical Weather — May 3–5 · Bryce Canyon NP (elev. ~8,000–9,100 ft)</div>
+      <div class="weather-grid">
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">62–70°F</span></div>
+        <div class="weather-cell"><span class="w-icon">🌙</span><span class="w-label">Low</span><span class="w-val">33–40°F</span></div>
+        <div class="weather-cell"><span class="w-icon">💨</span><span class="w-label">Wind</span><span class="w-val">14–15 mph avg (2nd windiest month)</span></div>
+        <div class="weather-cell"><span class="w-icon">🌧️</span><span class="w-label">Rain/Snow chance</span><span class="w-val">~15% — snow possible</span></div>
+        <div class="weather-cell"><span class="w-icon">❄️</span><span class="w-label">Snow</span><span class="w-val">~0.8" avg May — rare but real</span></div>
+        <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">UV index</span><span class="w-val">High — 8,000+ ft sun burns fast</span></div>
+      </div>
+      <div class="weather-note">⚠️ Bryce Canyon is the coldest stop of the trip by far — 8,000+ ft elevation means near-freezing nights. <strong>Bring a 20°F sleeping bag minimum</strong> for North Campground. May snow is uncommon but happens — hoodoos with snow are spectacular. April/May is the windiest period; the canyon walls provide some shelter on the under-rim hikes. Sunscreen critical — altitude + dry air = fast burn. Sunrise Point at golden hour is transcendent.</div>
     </div>
 
     <div class="photo-strip two">
