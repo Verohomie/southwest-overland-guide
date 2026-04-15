@@ -1,4 +1,12 @@
+# Deployment scripts (local use only)
 1_setup_git.sh
 2_push.sh
+
+# macOS
 .DS_Store
+
+# Environment
 .env
+
+# Code reviews
+code_review_*.html
