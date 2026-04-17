@@ -1053,9 +1053,27 @@ a { color: var(--sky); }
     @media (max-width: 480px) {
       .weather-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
-
-  
-  
+    .weather-live-badge {
+      display: inline-block;
+      background: #22c55e;
+      color: #000;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .has-live-weather {
+      border-color: #2A5040;
+      background: linear-gradient(135deg, #1A2E22 0%, #0D1B15 100%);
+    }
+    .has-live-weather .weather-header { color: #C8E8D8; }
+    .weather-loading .weather-header::after {
+      content: ' ⏳';
+      opacity: 0.6;
+    }
 
   </style>
 </head>
@@ -1224,7 +1242,7 @@ a { color: var(--sky); }
       You leave the mundane behind the moment you cross into Nevada. Alien-red sandstone formations rise without warning from the Mojave floor — one of the most photogenic state parks in the West and barely known outside the Southwest. Drive 4.5 hrs, then hike at your own pace as golden hour approaches. <strong>Why it's special:</strong> you're camping inside the fire itself. April temperatures are perfect (65–85°F days, 50s at night).
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="36.4882" data-lon="-114.5290" data-dates="2026-04-20">
       <div class="weather-header">🌡️ Historical Weather — Apr 20 · Valley of Fire, NV (elev. ~2,000 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">72–82°F</span></div>
@@ -1460,7 +1478,7 @@ a { color: var(--sky); }
       This is the day the trip earns its overlanding title. Instead of a boring highway slab to Kingman, you leave the red rocks of Valley of Fire, cross the Mojave to the Colorado River, then swap pavement for 14 miles of wide, easy desert dirt road through abandoned gold mine country — the Silver Creek Road section of the Arizona Peace Trail. You emerge in Oatman: a genuine 1800s mining ghost town with wild burros wandering the main street, a century-old saloon, and more character than anywhere else on this drive. Then you finish on Historic Route 66 over Sitgreaves Pass — a real mountain road with sweeping views — into Kingman for the night. Four completely different landscapes. Two pieces of American history. One very happy Land Cruiser.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="35.0264" data-lon="-114.3836" data-dates="2026-04-21">
       <div class="weather-header">🌡️ Historical Weather — Apr 21 · Mojave Desert / Oatman / Kingman (elev. 1,000–3,300 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">75–88°F</span></div>
@@ -1619,7 +1637,7 @@ a { color: var(--sky); }
       Sedona operates at maximum sensory overload — towering red buttes, creek-side camp in ponderosa pines, and trails that beg you to push further. Two days splits the classic hikes on Day 1 and the quieter gems on Day 2. <strong>Why it's special:</strong> the creek runs next to your tent and red cliffs rise above — you wake up inside a postcard.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="34.8697" data-lon="-111.7610" data-dates="2026-04-22,2026-04-23">
       <div class="weather-header">🌡️ Historical Weather — Apr 22–23 · Sedona, AZ (elev. ~4,350 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">65–72°F</span></div>
@@ -1834,7 +1852,7 @@ a { color: var(--sky); }
       You've earned a bed, a real shower, and a dinner you didn't cook over a camp stove. Walk the easy vortex sites, eat well, and study the Grand Canyon section over dinner. Low commitment, high pleasure.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="34.8697" data-lon="-111.7610" data-dates="2026-04-24">
       <div class="weather-header">🌡️ Historical Weather — Apr 24 · Sedona, AZ (elev. ~4,350 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">67–73°F</span></div>
@@ -1933,7 +1951,7 @@ a { color: var(--sky); }
       East Pocket is one of the most cinematic camping experiences in Arizona. You drive 26 miles of forest service roads through ponderosa pines, and then the trees break — and Sedona's entire red rock wilderness is below you, 2,000 feet down. <strong>Arrive by 2 PM</strong> to snag a rim site. Your Land Cruiser was built for exactly this.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="34.9799" data-lon="-111.7943" data-dates="2026-04-25">
       <div class="weather-header">🌡️ Historical Weather — Apr 25 · Edge of the World / FR231 (elev. ~7,000 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">55–62°F</span></div>
@@ -2093,7 +2111,7 @@ a { color: var(--sky); }
       Most visitors do the Grand Canyon in 4 hours. You have 3 days. That means below-rim hiking, the uncrowded Desert View Drive to the east, watching the Colorado River glint 4,000 feet below at sunrise, and actually sitting still long enough to feel the scale. Desert View is 25 miles from the tourist crush — quieter, darker skies, and you can reach spots the tour buses don't.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="36.0579" data-lon="-112.1440" data-dates="2026-04-26,2026-04-27,2026-04-28">
       <div class="weather-header">🌡️ Historical Weather — Apr 26–28 · Grand Canyon South Rim (elev. ~7,000 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">60–68°F</span></div>
@@ -2271,7 +2289,7 @@ a { color: var(--sky); }
       Drive from Desert View, Grand Canyon to Page (~2 hrs). Hit Horseshoe Bend first — the light is good all morning and crowds are manageable before 11am. Then grab lunch in Page, check into the hotel to drop bags, and head to your Antelope Canyon tour in the afternoon. Finish the day with sunset at Lone Rock Beach, camping on the shore of Lake Powell.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="37.0160" data-lon="-111.5451" data-dates="2026-04-29">
       <div class="weather-header">🌡️ Historical Weather — Apr 29 · Page, AZ / Lake Powell (elev. ~4,300 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">71–78°F</span></div>
@@ -2411,7 +2429,7 @@ a { color: var(--sky); }
       Muley Point may be the single greatest camping viewpoint in the American Southwest. From 5,715 feet on Cedar Mesa's edge, you see Monument Valley to the south, Goosenecks of the San Juan River directly below, Navajo Mountain to the west, and Bears Ears on the horizon. The drive up the Moki Dugway — 3 miles of 11% grade unpaved switchbacks with no guardrail — is equally magnificent. <strong>Arrive early for rim sites.</strong>
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="37.2761" data-lon="-109.9350" data-dates="2026-05-01">
       <div class="weather-header">🌡️ Historical Weather — May 1 · Mexican Hat / Muley Point, UT (elev. 4,000–6,300 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High (valley)</span><span class="w-val">68–76°F</span></div>
@@ -2626,7 +2644,7 @@ a { color: var(--sky); }
       <span class="energy-badge">⚡ Medium Energy</span>
       You drive north out of canyon country and enter something that looks like the surface of the moon. Gray bentonite clay badlands stretch in every direction. Factory Butte rises 1,400 feet from nowhere. Then you park at the rim of Moonscape Overlook and look down into the Blue Valley — a formation so alien that NASA's Mars Desert Research Station is located 15 minutes away. <strong>Why it's special:</strong> free BLM camp right on the rim. Sunrise here is what photographers travel across the country for.
     </div>
-    <div class="weather-box">
+    <div class="weather-box" data-lat="38.4643" data-lon="-110.8857" data-dates="2026-05-02">
       <div class="weather-header">🌡️ Historical Weather — May 2 · Moonscape Overlook / Hanksville, UT (elev. ~4,800 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">72–80°F</span></div>
@@ -2756,7 +2774,7 @@ a { color: var(--sky); }
       After the alien silence of Moonscape Overlook, Bryce is a completely different universe — technicolor hoodoos in impossible shades of orange, red, and white, packed into a 2,000-ft amphitheater carved by frost. You have two full days here. Use them. Day 1 is the classic combo: drop below the rim at sunrise, walk through Wall Street slot canyon, past Thor's Hammer and the Two Bridges, then back up through Queen's Garden. Day 2 goes deeper: the Peekaboo Loop from Bryce Point, the Wall of Windows, and Inspiration Point at sunset. North Campground puts you on the rim, 5-minute walk from Sunrise Point. <strong>Why it's special:</strong> most people spend a few hours. You're sleeping inside the park for two nights.
     </div>
 
-    <div class="weather-box">
+    <div class="weather-box" data-lat="37.5931" data-lon="-112.1871" data-dates="2026-05-03,2026-05-04">
       <div class="weather-header">🌡️ Historical Weather — May 3–4 · Bryce Canyon NP (elev. ~8,000 ft)</div>
       <div class="weather-grid">
         <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">62–70°F</span></div>
@@ -3000,7 +3018,7 @@ a { color: var(--sky); }
         Head west from Page on US-89 — same highway, opposite direction. The Vermilion Cliffs keep watch on the left as the road crosses into Utah. Kanab appears: "Utah's Little Hollywood," 200+ westerns filmed here, great food, last fuel and supplies. Then north on US-89 through Orderville to the Cottonwood Canyon Road turnoff. The paved road ends. 14 miles of bentonite clay and red canyon walls north to your camp at the foot of the Kaiparowits Plateau. The Cockscomb ridge glows at sunset. Zero light pollution. <strong>Why it's special:</strong> this is the Utah nobody drives to.
       </div>
 
-      <div class="weather-box">
+      <div class="weather-box" data-lat="37.3993" data-lon="-112.5792" data-dates="2026-04-30">
         <div class="weather-header">🌡️ Historical Weather — Alt Day A · Grand Staircase BLM Camp (elev. ~5,100 ft)</div>
         <div class="weather-grid">
           <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High</span><span class="w-val">68–76°F</span></div>
@@ -3126,7 +3144,7 @@ a { color: var(--sky); }
         Wake up deep in Grand Staircase. Drive north on Cottonwood Canyon Road to Cannonville, then south on Skutumpah Road 6 miles to Willis Creek. Drop into one of the best easy slot canyons in Utah — 300-ft Navajo sandstone walls, shallow creek, small waterfall, cool and shaded. Then break out onto Hwy 12, drive through the free red hoodoos of Red Canyon, and check into Bryce Canyon North Campground. After days of dirt roads and desert silence, the facilities feel like civilization. <strong>Why it's special:</strong> you earned Bryce the hard way — through the back door.
       </div>
 
-      <div class="weather-box">
+      <div class="weather-box" data-lat="37.3993" data-lon="-112.5792" data-dates="2026-05-01">
         <div class="weather-header">🌡️ Historical Weather — Alt Day B · Grand Staircase → Bryce Canyon (elev. 5,100→8,000 ft)</div>
         <div class="weather-grid">
           <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">High (Bryce)</span><span class="w-val">62–70°F</span></div>
@@ -3217,7 +3235,7 @@ a { color: var(--sky); }
         Leave early for the best Bryce light one last time. The Paunsaugunt Plateau drops away behind you. Hwy 12 west through Red Canyon — the same hoodoos that got you excited 3 days ago look different on the way out. North on US-89 through Panguitch, west on UT-20 to I-15, and then the long straight shot north. The Wasatch Front rises ahead. Salt Lake City appears. Trip: complete. 17 days, ~2,100 miles, Valley of Fire to Bryce Canyon, with a Moonscape Overlook bonus. <strong>Debrief:</strong> Drop gear at home, rinse mud off the truck, start planning the next one.
       </div>
 
-      <div class="weather-box">
+      <div class="weather-box" data-lat="40.7608" data-lon="-111.8910" data-dates="2026-05-06">
         <div class="weather-header">🌡️ Historical Weather — May 6 · Bryce → SLC corridor</div>
         <div class="weather-grid">
           <div class="weather-cell"><span class="w-icon">☀️</span><span class="w-label">Bryce departure</span><span class="w-val">50–65°F by 9am</span></div>
@@ -3272,5 +3290,149 @@ a { color: var(--sky); }
 <!--  PHOTO SWAP GUIDE (remove this section before final print)           -->
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 
+<script>
+(function () {
+  function fmt12(iso) {
+    if (!iso) return '—';
+    var t = iso.includes('T') ? iso.split('T')[1] : iso;
+    var parts = t.split(':');
+    var h = parseInt(parts[0], 10);
+    var m = parts[1];
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    var h12 = ((h + 11) % 12) + 1;
+    return h12 + ':' + m + ' ' + ampm;
+  }
+
+  function cell(icon, label, val) {
+    return '<div class="weather-cell">' +
+      '<span class="w-icon">' + icon + '</span>' +
+      '<span class="w-label">' + label + '</span>' +
+      '<span class="w-val">' + val + '</span>' +
+      '</div>';
+  }
+
+  function applyForecast(box, data) {
+    var dates = (box.dataset.dates || '').split(',').map(function (d) { return d.trim(); });
+    var daily = data.daily;
+    if (!daily || !daily.time) return;
+
+    var indices = [];
+    dates.forEach(function (d) {
+      var i = daily.time.indexOf(d);
+      if (i >= 0) indices.push(i);
+    });
+    if (indices.length === 0) return; // Beyond forecast window — keep historical
+
+    var highs  = indices.map(function (i) { return daily.temperature_2m_max[i]; });
+    var lows   = indices.map(function (i) { return daily.temperature_2m_min[i]; });
+    var winds  = indices.map(function (i) { return daily.windspeed_10m_max[i]; });
+    var gusts  = indices.map(function (i) { return daily.windgusts_10m_max[i]; });
+    var rains  = indices.map(function (i) { return daily.precipitation_probability_max[i]; });
+    var humids = indices.map(function (i) { return daily.relative_humidity_2m_max[i]; });
+
+    var maxHigh = Math.max.apply(null, highs);
+    var minHigh = Math.min.apply(null, highs);
+    var minLow  = Math.min.apply(null, lows);
+    var maxLow  = Math.max.apply(null, lows);
+    var maxWind = Math.max.apply(null, winds);
+    var maxGust = Math.max.apply(null, gusts);
+    var maxRain = Math.max.apply(null, rains);
+    var avgHumid = Math.round(humids.reduce(function (a, b) { return a + b; }, 0) / humids.length);
+
+    var fi = indices[0];
+    var sunrise = fmt12(daily.sunrise[fi]);
+    var sunset  = fmt12(daily.sunset[fi]);
+
+    var highStr = indices.length > 1
+      ? Math.round(minHigh) + '–' + Math.round(maxHigh) + '°F'
+      : Math.round(maxHigh) + '°F';
+    var lowStr = indices.length > 1
+      ? Math.round(minLow) + '–' + Math.round(maxLow) + '°F'
+      : Math.round(minLow) + '°F';
+
+    var html =
+      cell('☀️', 'High', highStr) +
+      cell('🌙', 'Low', lowStr) +
+      cell('💨', 'Wind max', Math.round(maxWind) + ' mph') +
+      cell('💨', 'Gusts', Math.round(maxGust) + ' mph') +
+      cell('🌧️', 'Rain chance', maxRain + '%') +
+      cell('💧', 'Humidity', '~' + avgHumid + '%') +
+      cell('🌅', 'Sunrise / Sunset', sunrise + ' · ' + sunset);
+
+    var newGrid = document.createElement('div');
+    newGrid.className = 'weather-grid';
+    newGrid.innerHTML = html;
+
+    var oldGrid = box.querySelector('.weather-grid');
+    if (oldGrid) oldGrid.parentNode.replaceChild(newGrid, oldGrid);
+
+    // Update header
+    var header = box.querySelector('.weather-header');
+    if (header) {
+      var text = header.textContent;
+      var dash = text.indexOf('—');
+      var loc = dash >= 0 ? text.slice(dash) : text;
+      header.innerHTML = '📡 Live Forecast ' + loc +
+        ' <span class="weather-live-badge">LIVE</span>';
+    }
+
+    box.classList.remove('weather-loading');
+    box.classList.add('has-live-weather');
+  }
+
+  function loadWeather() {
+    var boxes = Array.prototype.slice.call(
+      document.querySelectorAll('.weather-box[data-lat]')
+    );
+    if (!boxes.length) return;
+
+    // Group by unique lat/lon to minimise API calls
+    var groups = {};
+    boxes.forEach(function (box) {
+      var key = box.dataset.lat + '|' + box.dataset.lon;
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(box);
+      box.classList.add('weather-loading');
+    });
+
+    Object.keys(groups).forEach(function (key) {
+      var parts = key.split('|');
+      var lat = parts[0], lon = parts[1];
+      var groupBoxes = groups[key];
+
+      var url = 'https://api.open-meteo.com/v1/forecast' +
+        '?latitude=' + lat +
+        '&longitude=' + lon +
+        '&daily=temperature_2m_max,temperature_2m_min,' +
+        'precipitation_probability_max,windspeed_10m_max,' +
+        'windgusts_10m_max,sunrise,sunset,relative_humidity_2m_max' +
+        '&temperature_unit=fahrenheit' +
+        '&windspeed_unit=mph' +
+        '&timezone=auto' +
+        '&forecast_days=16';
+
+      fetch(url)
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (data) {
+          groupBoxes.forEach(function (box) {
+            applyForecast(box, data);
+            box.classList.remove('weather-loading');
+          });
+        })
+        .catch(function () {
+          groupBoxes.forEach(function (box) {
+            box.classList.remove('weather-loading');
+          });
+        });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadWeather);
+  } else {
+    loadWeather();
+  }
+})();
+</script>
 </body>
 </html>
