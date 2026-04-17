@@ -3400,16 +3400,22 @@ a { color: var(--sky); }
       var lat = parts[0], lon = parts[1];
       var groupBoxes = groups[key];
 
+      var today = new Date(); today.setHours(0,0,0,0);
+      var tripEnd = new Date('2026-05-06');
+      var daysNeeded = Math.ceil((tripEnd - today) / 86400000) + 2;
+      var forecastDays = Math.min(Math.max(daysNeeded, 7), 35);
+
       var url = 'https://api.open-meteo.com/v1/forecast' +
         '?latitude=' + lat +
         '&longitude=' + lon +
+        '&models=gfs_seamless' +
         '&daily=temperature_2m_max,temperature_2m_min,' +
         'precipitation_probability_max,windspeed_10m_max,' +
         'windgusts_10m_max,sunrise,sunset,relative_humidity_2m_max' +
         '&temperature_unit=fahrenheit' +
         '&windspeed_unit=mph' +
         '&timezone=auto' +
-        '&forecast_days=16';
+        '&forecast_days=' + forecastDays;
 
       fetch(url)
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
