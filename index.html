@@ -3292,6 +3292,38 @@ a { color: var(--sky); }
 
 <script>
 (function () {
+
+  // ── Model tier selection ──────────────────────────────────────────────────
+  // Picks the best available Open-Meteo model based on how many days out the
+  // forecast date is. Models get higher-res and more accurate as you close in.
+  //
+  //  0–2d  : GFS·HRRR seamless — 3 km resolution, updated hourly (US only)
+  //  3–10d : ECMWF IFS 0.25°  — world's best medium-range model
+  // 11–16d : GFS Seamless      — reliable deterministic global
+  // 17–35d : GFS Seamless ext  — ensemble-backed, lower confidence
+  //
+  // Badge colour reflects confidence tier so you can see the shift on reload.
+  var TIERS = [
+    { maxDays:  2, model: 'gfs_seamless',  label: 'HRRR·GFS',  color: '#22c55e', forecastDays:  3 },
+    { maxDays: 10, model: 'ecmwf_ifs025', label: 'ECMWF IFS', color: '#3b82f6', forecastDays: 10 },
+    { maxDays: 16, model: 'gfs_seamless',  label: 'GFS 16d',   color: '#eab308', forecastDays: 16 },
+    { maxDays: 99, model: 'gfs_seamless',  label: 'GFS Ext',   color: '#f97316', forecastDays: 35 },
+  ];
+
+  function tierFor(daysUntil) {
+    for (var i = 0; i < TIERS.length; i++) {
+      if (daysUntil <= TIERS[i].maxDays) return TIERS[i];
+    }
+    return TIERS[TIERS.length - 1];
+  }
+
+  function daysUntil(dateStr) {
+    var today = new Date(); today.setHours(0,0,0,0);
+    var d = new Date(dateStr); d.setHours(0,0,0,0);
+    return Math.ceil((d - today) / 86400000);
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
   function fmt12(iso) {
     if (!iso) return '—';
     var t = iso.includes('T') ? iso.split('T')[1] : iso;
@@ -3311,7 +3343,8 @@ a { color: var(--sky); }
       '</div>';
   }
 
-  function applyForecast(box, data) {
+  // ── Apply live data to a box ──────────────────────────────────────────────
+  function applyForecast(box, data, tier) {
     var dates = (box.dataset.dates || '').split(',').map(function (d) { return d.trim(); });
     var daily = data.daily;
     if (!daily || !daily.time) return;
@@ -3321,7 +3354,7 @@ a { color: var(--sky); }
       var i = daily.time.indexOf(d);
       if (i >= 0) indices.push(i);
     });
-    if (indices.length === 0) return; // Beyond forecast window — keep historical
+    if (indices.length === 0) return; // Still outside window — keep historical
 
     var highs  = indices.map(function (i) { return daily.temperature_2m_max[i]; });
     var lows   = indices.map(function (i) { return daily.temperature_2m_min[i]; });
@@ -3330,16 +3363,16 @@ a { color: var(--sky); }
     var rains  = indices.map(function (i) { return daily.precipitation_probability_max[i]; });
     var humids = indices.map(function (i) { return daily.relative_humidity_2m_max[i]; });
 
-    var maxHigh = Math.max.apply(null, highs);
-    var minHigh = Math.min.apply(null, highs);
-    var minLow  = Math.min.apply(null, lows);
-    var maxLow  = Math.max.apply(null, lows);
-    var maxWind = Math.max.apply(null, winds);
-    var maxGust = Math.max.apply(null, gusts);
-    var maxRain = Math.max.apply(null, rains);
+    var maxHigh  = Math.max.apply(null, highs);
+    var minHigh  = Math.min.apply(null, highs);
+    var minLow   = Math.min.apply(null, lows);
+    var maxLow   = Math.max.apply(null, lows);
+    var maxWind  = Math.max.apply(null, winds);
+    var maxGust  = Math.max.apply(null, gusts);
+    var maxRain  = Math.max.apply(null, rains);
     var avgHumid = Math.round(humids.reduce(function (a, b) { return a + b; }, 0) / humids.length);
 
-    var fi = indices[0];
+    var fi      = indices[0];
     var sunrise = fmt12(daily.sunrise[fi]);
     var sunset  = fmt12(daily.sunset[fi]);
 
@@ -3350,7 +3383,9 @@ a { color: var(--sky); }
       ? Math.round(minLow) + '–' + Math.round(maxLow) + '°F'
       : Math.round(minLow) + '°F';
 
-    var html =
+    var newGrid = document.createElement('div');
+    newGrid.className = 'weather-grid';
+    newGrid.innerHTML =
       cell('☀️', 'High', highStr) +
       cell('🌙', 'Low', lowStr) +
       cell('💨', 'Wind max', Math.round(maxWind) + ' mph') +
@@ -3359,76 +3394,72 @@ a { color: var(--sky); }
       cell('💧', 'Humidity', '~' + avgHumid + '%') +
       cell('🌅', 'Sunrise / Sunset', sunrise + ' · ' + sunset);
 
-    var newGrid = document.createElement('div');
-    newGrid.className = 'weather-grid';
-    newGrid.innerHTML = html;
-
     var oldGrid = box.querySelector('.weather-grid');
     if (oldGrid) oldGrid.parentNode.replaceChild(newGrid, oldGrid);
 
-    // Update header
+    // Header: swap "Historical Weather" → "Live Forecast · <MODEL>"
     var header = box.querySelector('.weather-header');
     if (header) {
       var text = header.textContent;
       var dash = text.indexOf('—');
-      var loc = dash >= 0 ? text.slice(dash) : text;
+      var loc  = dash >= 0 ? text.slice(dash) : text;
       header.innerHTML = '📡 Live Forecast ' + loc +
-        ' <span class="weather-live-badge">LIVE</span>';
+        ' <span class="weather-live-badge" style="background:' + tier.color + '">' +
+        tier.label + ' · LIVE</span>';
     }
 
     box.classList.remove('weather-loading');
     box.classList.add('has-live-weather');
   }
 
+  // ── Main loader ───────────────────────────────────────────────────────────
   function loadWeather() {
     var boxes = Array.prototype.slice.call(
       document.querySelectorAll('.weather-box[data-lat]')
     );
     if (!boxes.length) return;
 
-    // Group by unique lat/lon to minimise API calls
+    // Group by lat/lon — but each group may need a different model tier
+    // depending on how far away its earliest date is. Split into sub-groups
+    // keyed by lat|lon|tierLabel so one location can get ECMWF one day and
+    // GFS the next without extra fetches once it's already close.
     var groups = {};
     boxes.forEach(function (box) {
-      var key = box.dataset.lat + '|' + box.dataset.lon;
-      if (!groups[key]) groups[key] = [];
-      groups[key].push(box);
+      var dates   = (box.dataset.dates || '').split(',').map(function (d) { return d.trim(); });
+      var minDays = dates.reduce(function (mn, d) {
+        return Math.min(mn, daysUntil(d));
+      }, Infinity);
+      var tier = tierFor(minDays);
+      var key  = box.dataset.lat + '|' + box.dataset.lon + '|' + tier.label;
+      if (!groups[key]) groups[key] = { lat: box.dataset.lat, lon: box.dataset.lon, tier: tier, boxes: [] };
+      groups[key].boxes.push(box);
       box.classList.add('weather-loading');
     });
 
     Object.keys(groups).forEach(function (key) {
-      var parts = key.split('|');
-      var lat = parts[0], lon = parts[1];
-      var groupBoxes = groups[key];
-
-      var today = new Date(); today.setHours(0,0,0,0);
-      var tripEnd = new Date('2026-05-06');
-      var daysNeeded = Math.ceil((tripEnd - today) / 86400000) + 2;
-      var forecastDays = Math.min(Math.max(daysNeeded, 7), 35);
-
+      var g   = groups[key];
       var url = 'https://api.open-meteo.com/v1/forecast' +
-        '?latitude=' + lat +
-        '&longitude=' + lon +
-        '&models=gfs_seamless' +
+        '?latitude='  + g.lat +
+        '&longitude=' + g.lon +
+        '&models='    + g.tier.model +
         '&daily=temperature_2m_max,temperature_2m_min,' +
         'precipitation_probability_max,windspeed_10m_max,' +
         'windgusts_10m_max,sunrise,sunset,relative_humidity_2m_max' +
         '&temperature_unit=fahrenheit' +
         '&windspeed_unit=mph' +
         '&timezone=auto' +
-        '&forecast_days=' + forecastDays;
+        '&forecast_days=' + g.tier.forecastDays;
 
       fetch(url)
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (data) {
-          groupBoxes.forEach(function (box) {
-            applyForecast(box, data);
+          g.boxes.forEach(function (box) {
+            applyForecast(box, data, g.tier);
             box.classList.remove('weather-loading');
           });
         })
         .catch(function () {
-          groupBoxes.forEach(function (box) {
-            box.classList.remove('weather-loading');
-          });
+          g.boxes.forEach(function (box) { box.classList.remove('weather-loading'); });
         });
     });
   }
