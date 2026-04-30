@@ -50,6 +50,7 @@ body {
   background: var(--stone-pale);
   color: var(--ink);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ── PRINT CONTAINER ───────────────────────────────────────────────────── */
@@ -57,6 +58,7 @@ body {
   max-width: var(--page-width);
   margin: 0 auto;
   background: var(--white);
+  overflow-x: hidden;
   box-shadow: 0 4px 40px rgba(0,0,0,0.18);
 }
 
@@ -206,12 +208,15 @@ body {
 /* ── DAY PAGE STRUCTURE ─────────────────────────────────────────────────── */
 .day-page {
   page-break-before: always;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* ── DAY BANNER ─────────────────────────────────────────────────────────── */
 .day-banner {
   position: relative;
   overflow: hidden;
+  max-width: 100%;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -286,6 +291,9 @@ body {
 /* ── DAY BODY ───────────────────────────────────────────────────────────── */
 .day-body {
   padding: 20px var(--margin) 28px;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* ── SECTION HEADER ─────────────────────────────────────────────────────── */
@@ -990,6 +998,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .page-header-bar span {
   font-family: var(--font-mono);
@@ -1200,7 +1211,7 @@ a { color: var(--sky); }
   </div>
 
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/salt_lake-valley.png" alt="Day 1 — SLC to Valley of Fire" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/Salt%20Lake%20City%2C%20UT/St.%20George%2C%20UT/Mesquite%2C%20NV/36.4882%2C-114.5290/36.4452%2C-114.5354" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -1431,7 +1442,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/valley-kingman.png" alt="Day 2 route map" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/36.4452,-114.5354/35.9785,-114.8328/35.1447,-114.5682/35.0264,-114.3836/Kingman+AZ" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -1600,7 +1611,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/kingman-sedona.png" alt="Days 3–4 — Sedona" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/Kingman+AZ/Sedona+AZ/34.9891,-111.7511" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -1821,7 +1832,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/pine_campground-sedona.png" alt="Day 5 — Sedona Hotel Day" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/34.9891%2C-111.7511/34.8557%2C-111.7803/34.8268%2C-111.7629/34.8697%2C-111.7610" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -1920,7 +1931,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/sedona-edge.png" alt="Day 6 — Sedona to Edge of the World" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/34.8697%2C-111.7610/34.9799%2C-111.7943" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -2074,7 +2085,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/edge-grandcanyon.png" alt="Days 7-9 — Edge of World to Grand Canyon" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/34.9799,-111.7943/South+Kaibab+Trailhead+Grand+Canyon+AZ/Mather+Point+Grand+Canyon+AZ/Lipan+Point+Grand+Canyon+AZ/Desert+View+Campground+Grand+Canyon+AZ" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -2261,7 +2272,7 @@ a { color: var(--sky); }
   </div>
   <div class="day-body">
 
-    <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+    <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
       <img src="images/grandcanyon-page.png" alt="Day 10 — Grand Canyon to Page" style="width:100%;display:block;">
       <a href="https://www.google.com/maps/dir/36.0425%2C-111.8248/36.8842%2C-111.5094/36.9157%2C-111.4559" target="_blank"
          style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
@@ -2398,7 +2409,7 @@ a { color: var(--sky); }
     </div>
   </div>
   <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
   <img src="images/lonrock-muley.png" alt="Day 11 — Antelope Canyon + BLM" style="width:100%;display:block;">
   <a href="https://www.google.com/maps/dir/37.0160%2C-111.5451/36.9835%2C-110.1068/37.1014%2C-109.9909/37.1743%2C-109.9270/37.1600%2C-109.8950/37.2331%2C-109.9930" target="_blank"
      style="position:absolute;bottom:8px;right:8px;background:rgba(26,26,46,0.88);
@@ -2655,7 +2666,7 @@ a { color: var(--sky); }
       </div>
     </div>
     <div class="day-body">
-<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+<div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
         <img src="images/muley-moonscape.png" alt="Day 13 — Muley Point → Natural Bridges NM → Moonscape Overlook (3hr 12min, 159 miles)" style="width:100%;display:block;">
         <a href="https://www.google.com/maps/dir/37.2331%2C-109.9930/37.6064%2C-110.0092/38.3705%2C-110.7198/38.4643%2C-110.8857" target="_blank"
            style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
@@ -2820,7 +2831,7 @@ a { color: var(--sky); }
   </div>
   <div class="day-body">
 
-    <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+    <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
       <img src="images/moonscape-bryce-route.png" alt="Day 14 — Moonscape Overlook to Bryce Canyon via Capitol Reef + UT-12 (3hr 28min, 157 miles)" style="width:100%;display:block;">
       <a href="https://www.google.com/maps/dir/38.4643%2C-110.8857/Capitol+Reef+National+Park/Torrey+Utah/Escalante+Utah/Bryce+Canyon+North+Campground" target="_blank"
          style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
@@ -3064,7 +3075,7 @@ a { color: var(--sky); }
     </div>
     <div class="day-body">
 
-      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
         <img src="images/altdaya-route.png" alt="Alt Day A — Page → Kanab → Orderville → Grand Staircase route (2hr 2min, 111 miles)" style="width:100%;display:block;">
         <a href="https://www.google.com/maps/dir/36.9147%2C-111.4543/37.0469%2C-112.5263/37.2728%2C-112.6411/37.3993%2C-112.5792" target="_blank"
            style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
@@ -3190,7 +3201,7 @@ a { color: var(--sky); }
     </div>
     <div class="day-body">
 
-      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
         <img src="images/altdayb-route.png" alt="Alt Day B — Grand Staircase camp → Willis Creek → Cannonville → Bryce Canyon (2hr 52min, 118 miles)" style="width:100%;display:block;">
         <a href="https://www.google.com/maps/dir/37.3993%2C-112.5792/37.4815%2C-112.0961/37.6070%2C-112.0530/37.7390%2C-112.3530/37.6430%2C-112.1696" target="_blank"
            style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
@@ -3281,7 +3292,7 @@ a { color: var(--sky); }
     </div>
     <div class="day-body">
 
-      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;">
+      <div style="margin:6px 0 4px;position:relative;border:1px solid #D4D0C8;max-width:100%;overflow:hidden;box-sizing:border-box;">
         <img src="images/bryce-slc-route.png" alt="Final Day — Bryce Canyon to Salt Lake City via I-15 (4hr 16min, 265 miles)" style="width:100%;display:block;">
         <a href="https://www.google.com/maps/dir/Bryce+Canyon+National+Park/Salt+Lake+City+UT" target="_blank"
            style="position:absolute;bottom:8px;right:8px;background:#1A1A2E;color:#E8D5B7;font-family:Georgia,serif;font-size:11px;font-weight:bold;text-decoration:none;padding:7px 12px;border-radius:4px;border:1px solid #E67E22;letter-spacing:0.5px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">🗺 OPEN IN GOOGLE MAPS →</a>
